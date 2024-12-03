@@ -69,28 +69,34 @@ module top(
                 .pressed(deb_press [0]), 
                 .held(deb_held [0]),
                 .button(simon_buttons[0]),
-                .reset(reset)
+                .reset(reset),
+                .clk(clk)
         );
 
         debouncer deb_s1 (
                 .pressed(deb_press [1]), 
                 .held(deb_held [1]),
                 .button(simon_buttons[1]),
-                .reset(reset)
+                .reset(reset),
+                .clk(clk)
         );
 
         debouncer deb_s2 (
                 .pressed(deb_press [2]), 
                 .held(deb_held [2]),
                 .button(simon_buttons[2]),
-                .reset(reset)
+                .reset(reset),
+                .clk(clk)
+
         );
 
         debouncer deb_s3 (
                 .pressed(deb_press [3]), 
                 .held(deb_held [3]),
                 .button(simon_buttons[3]),
-                .reset(reset)
+                .reset(reset),
+                .clk(clk)
+
         );
 
         button_ctrl simon_button_loc (
