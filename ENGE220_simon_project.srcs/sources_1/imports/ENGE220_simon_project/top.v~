@@ -134,7 +134,7 @@ module top(
 		.clk(clk)
 	);
 
-        assign led = deb_held;
+        assign led = c_state;
         
 	always @(posedge clk) begin
                 c_state <= n_state;  

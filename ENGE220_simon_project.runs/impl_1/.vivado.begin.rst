@@ -1,15 +1,25 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="danie" Host="ZEPHYRUSG14-DB" Pid="31876" HostCore="16" HostMemory="025131372544">
+    <Process Command="vivado.bat" Owner="dblue23" Host="WM106-ST08_01" Pid="4108" HostCore="24" HostMemory="034050838528">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="danie" Host="ZEPHYRUSG14-DB" Pid="23484" HostCore="16" HostMemory="025131372544">
+    <Process Command="vivado.bat" Owner="dblue23" Host="WM106-ST08_01" Pid="14416" HostCore="24" HostMemory="034050838528">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="danie" Host="ZEPHYRUSG14-DB" Pid="21260" HostCore="16" HostMemory="025131372544">
+    <Process Command="vivado.bat" Owner="dblue23" Host="WM106-ST08_01" Pid="17700" HostCore="24" HostMemory="034050838528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="dblue23" Host="WM106-ST08_01" Pid="10112" HostCore="24" HostMemory="034050838528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="dblue23" Host="WM106-ST08_01" Pid="18204" HostCore="24" HostMemory="034050838528">
     </Process>
 </ProcessHandle>

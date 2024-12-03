@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1733037172" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1733250950" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top.dcp">
   <File Type="PA-TCL" Name="top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
   <File Type="RDS-RDS" Name="top.vds"/>
   <File Type="RDS-UTIL" Name="top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="top_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/modules/LCD_always.v">
@@ -63,15 +66,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/modules/unsigned_to_ASCII.v">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="//ceng/dblue23/Documents/ENGE220_simon_project/modules/unsigned_to_ASCII.v"/>
-        <Attr Name="ImportTime" Val="1732608543"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/modules/speakerselect.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="//ceng/dblue23/Documents/ENGE220_simon_project/modules/speakerselect.v"/>
@@ -98,6 +92,36 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/button_ctrl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/LFSR.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/PRNG.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/modules/timer.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="//ceng/dblue23/Documents/ENGE220_simon_project/modules/timer.v"/>
+        <Attr Name="ImportTime" Val="1733183988"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -136,7 +160,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

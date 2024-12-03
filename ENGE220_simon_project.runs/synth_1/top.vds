@@ -3,28 +3,27 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sat Nov 30 23:12:57 2024
-# Process ID: 32380
-# Current directory: C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1
+# Start of session at: Tue Dec  3 10:35:52 2024
+# Process ID: 9884
+# Current directory: Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.vds
-# Journal file: C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1\vivado.jou
-# Running On        :ZephyrusG14-DB
+# Log file: Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.vds
+# Journal file: Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1\vivado.jou
+# Running On        :WM106-ST08_01
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :22631
-# Processor Detail  :AMD Ryzen 9 5900HS with Radeon Graphics        
-# CPU Frequency     :3294 MHz
-# CPU Physical cores:8
-# CPU Logical cores :16
-# Host memory       :25131 MB
-# Swap memory       :14495 MB
-# Total Virtual     :39626 MB
-# Available Virtual :12016 MB
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:16
+# CPU Logical cores :24
+# Host memory       :34050 MB
+# Swap memory       :5100 MB
+# Total Virtual     :39151 MB
+# Available Virtual :27157 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 512.043 ; gain = 199.875
-Command: read_checkpoint -auto_incremental -incremental C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/utils_1/imports/synth_1/top.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/utils_1/imports/synth_1/top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top -part xc7a35tcpg236-1
 Starting synth_design
@@ -36,220 +35,270 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1096
+INFO: [Synth 8-7075] Helper process launched with PID 8028
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1366.391 ; gain = 449.379
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1384.246 ; gain = 449.887
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'ready', assumed default net type 'wire' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_string.v:28]
-INFO: [Synth 8-11241] undeclared symbol 'simon_button', assumed default net type 'wire' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:69]
-INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:3]
-INFO: [Synth 8-6157] synthesizing module 'debouncer' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'debouncer' (0#1) [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:1]
-WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s0' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:39]
-WARNING: [Synth 8-7023] instance 'deb_s0' of module 'debouncer' has 5 connections declared, but only 4 given [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:39]
-WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s1' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:46]
-WARNING: [Synth 8-7023] instance 'deb_s1' of module 'debouncer' has 5 connections declared, but only 4 given [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:46]
-WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s2' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:53]
-WARNING: [Synth 8-7023] instance 'deb_s2' of module 'debouncer' has 5 connections declared, but only 4 given [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:53]
-WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s3' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:60]
-WARNING: [Synth 8-7023] instance 'deb_s3' of module 'debouncer' has 5 connections declared, but only 4 given [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:60]
-INFO: [Synth 8-6157] synthesizing module 'button_ctrl' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:1]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'button_ctrl' (0#1) [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:1]
-WARNING: [Synth 8-689] width (1) of port connection 'button_in' does not match port width (4) of module 'button_ctrl' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:69]
-INFO: [Synth 8-6157] synthesizing module 'led_ctrl' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'led_ctrl' (0#1) [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:3]
-WARNING: [Synth 8-3848] Net simon_button in module/entity top does not have driver. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:69]
-WARNING: [Synth 8-3848] Net reset in module/entity top does not have driver. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:32]
+INFO: [Synth 8-11241] undeclared symbol 'ready', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_string.v:28]
+INFO: [Synth 8-11241] undeclared symbol 'speaker', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:129]
+INFO: [Synth 8-11241] undeclared symbol 'key_sequece_count', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:146]
+INFO: [Synth 8-11241] undeclared symbol 'seq_count_reset', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:148]
+INFO: [Synth 8-11241] undeclared symbol 'seq_count_enable', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:149]
+INFO: [Synth 8-11241] undeclared symbol 'score_count_tick', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:157]
+INFO: [Synth 8-6157] synthesizing module 'top' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:3]
+INFO: [Synth 8-6157] synthesizing module 'debouncer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'debouncer' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:1]
+WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s0' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:68]
+WARNING: [Synth 8-7023] instance 'deb_s0' of module 'debouncer' has 5 connections declared, but only 4 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:68]
+WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s1' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:75]
+WARNING: [Synth 8-7023] instance 'deb_s1' of module 'debouncer' has 5 connections declared, but only 4 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:75]
+WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s2' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:82]
+WARNING: [Synth 8-7023] instance 'deb_s2' of module 'debouncer' has 5 connections declared, but only 4 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:82]
+WARNING: [Synth 8-7071] port 'clk' of module 'debouncer' is unconnected for instance 'deb_s3' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:89]
+WARNING: [Synth 8-7023] instance 'deb_s3' of module 'debouncer' has 5 connections declared, but only 4 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:89]
+INFO: [Synth 8-6157] synthesizing module 'button_ctrl' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'button_ctrl' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'led_ctrl' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'led_ctrl' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'PRNG' [//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/PRNG.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LFSR' [//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/LFSR.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'LFSR' (0#1) [//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/LFSR.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LFSR__parameterized0' [//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/LFSR.v:1]
+	Parameter FILL bound to: 16'b0000000000000001 
+INFO: [Synth 8-6155] done synthesizing module 'LFSR__parameterized0' (0#1) [//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/LFSR.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'PRNG' (0#1) [//ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/PRNG.v:1]
+INFO: [Synth 8-6157] synthesizing module 'scale_decoder' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/scale_decoder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'scale_decoder' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/scale_decoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'speakerselect' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/speakerselect.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'speakerselect' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/speakerselect.v:1]
+INFO: [Synth 8-6157] synthesizing module 'counter' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v:1]
+WARNING: [Synth 8-689] width (7) of port connection 'count' does not match port width (8) of module 'counter' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:136]
+WARNING: [Synth 8-689] width (1) of port connection 'count' does not match port width (8) of module 'counter' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:146]
+INFO: [Synth 8-6157] synthesizing module 'timer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:3]
+WARNING: [Synth 8-3848] Net reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:27]
+WARNING: [Synth 8-3848] Net seq_count_reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:148]
+WARNING: [Synth 8-3848] Net seq_count_enable in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:149]
+WARNING: [Synth 8-3848] Net score_count_tick in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:157]
+WARNING: [Synth 8-3848] Net randomize in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:36]
+WARNING: [Synth 8-3848] Net rerun in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:36]
+WARNING: [Synth 8-3848] Net rand_reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:37]
+WARNING: [Synth 8-3848] Net round_count_reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:40]
+WARNING: [Synth 8-3848] Net round_count_enable in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:40]
+WARNING: [Synth 8-3848] Net round_count_tick in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:40]
+WARNING: [Synth 8-3848] Net seq_count_tick in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:45]
+WARNING: [Synth 8-3848] Net seq_timer_reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:47]
+WARNING: [Synth 8-3848] Net seq_timer_enable in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:47]
+WARNING: [Synth 8-3848] Net score_count_reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:51]
+WARNING: [Synth 8-3848] Net score_count_enable in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:51]
+WARNING: [Synth 8-3848] Net tone_enable in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:58]
+WARNING: [Synth 8-3848] Net note_sel in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:60]
 WARNING: [Synth 8-7129] Port sw[3] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[1] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[0] in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1475.617 ; gain = 558.605
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1496.008 ; gain = 561.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1475.617 ; gain = 558.605
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1496.008 ; gain = 561.648
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1475.617 ; gain = 558.605
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1496.008 ; gain = 561.648
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1475.617 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1496.008 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc]
-WARNING: [Vivado 12-584] No ports matched 'seg_n[0]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:82]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:82]
+Parsing XDC File [Z:/Documents/ENGE220_simon_project/constraints.xdc]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[0]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:82]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:82]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[0]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:83]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:83]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[0]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:83]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:83]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[1]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:84]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:84]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[1]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:84]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:84]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[1]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:85]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:85]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[1]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:85]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:85]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[2]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:86]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:86]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[2]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:86]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:86]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[2]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:87]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[2]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:87]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:87]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[3]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:88]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[3]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:88]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:88]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[3]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:89]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:89]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[3]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:89]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:89]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[4]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:90]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[4]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:90]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:90]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[4]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:91]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[4]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:91]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:91]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[5]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:92]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[5]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:92]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:92]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[5]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:93]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[5]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:93]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:93]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[6]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:94]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[6]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:94]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:94]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[6]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:95]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:95]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[6]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:95]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:95]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[7]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:96]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:96]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[7]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:96]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:96]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'seg_n[7]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:97]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:97]
+WARNING: [Vivado 12-584] No ports matched 'seg_n[7]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:97]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:97]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[0]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:99]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:99]
+WARNING: [Vivado 12-584] No ports matched 'an_n[0]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:99]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:99]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[0]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:100]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:100]
+WARNING: [Vivado 12-584] No ports matched 'an_n[0]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:100]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:100]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[1]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:101]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:101]
+WARNING: [Vivado 12-584] No ports matched 'an_n[1]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:101]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:101]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[1]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:102]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:102]
+WARNING: [Vivado 12-584] No ports matched 'an_n[1]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:102]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:102]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[2]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:103]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:103]
+WARNING: [Vivado 12-584] No ports matched 'an_n[2]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:103]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:103]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[2]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:104]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:104]
+WARNING: [Vivado 12-584] No ports matched 'an_n[2]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:104]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:104]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[3]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:105]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:105]
+WARNING: [Vivado 12-584] No ports matched 'an_n[3]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:105]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:105]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'an_n[3]'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:106]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:106]
+WARNING: [Vivado 12-584] No ports matched 'an_n[3]'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:106]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:106]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:110]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:110]
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:110]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:110]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnC'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:111]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:111]
+WARNING: [Vivado 12-584] No ports matched 'btnC'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:111]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:112]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:112]
+WARNING: [Vivado 12-584] No ports matched 'btnU'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:112]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnU'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:113]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:113]
+WARNING: [Vivado 12-584] No ports matched 'btnU'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:113]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:113]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:114]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:114]
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:114]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnL'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:115]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:115]
+WARNING: [Vivado 12-584] No ports matched 'btnL'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:115]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:116]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:116]
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:116]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:116]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnR'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:117]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:117]
+WARNING: [Vivado 12-584] No ports matched 'btnR'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:117]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:117]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:118]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:118]
+WARNING: [Vivado 12-584] No ports matched 'btnD'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:118]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:118]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btnD'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:119]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:119]
+WARNING: [Vivado 12-584] No ports matched 'btnD'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:119]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:119]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'speaker'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:193]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:193]
+WARNING: [Vivado 12-584] No ports matched 'speaker'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:193]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:193]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'speaker'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:194]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:194]
+WARNING: [Vivado 12-584] No ports matched 'speaker'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:194]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:194]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'lcd_regsel'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:199]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:199]
+WARNING: [Vivado 12-584] No ports matched 'lcd_regsel'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:199]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:199]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'lcd_regsel'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:200]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:200]
+WARNING: [Vivado 12-584] No ports matched 'lcd_regsel'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:200]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:200]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'lcd_enable'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:202]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:202]
+WARNING: [Vivado 12-584] No ports matched 'lcd_enable'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:202]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:202]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'lcd_enable'. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:203]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc:203]
+WARNING: [Vivado 12-584] No ports matched 'lcd_enable'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:203]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:203]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Finished Parsing XDC File [Z:/Documents/ENGE220_simon_project/constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [Z:/Documents/ENGE220_simon_project/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1569.859 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1596.148 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1569.859 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1596.148 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'button_loc_reg' [C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:12]
+WARNING: [Synth 8-327] inferring latch for variable 'button_loc_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:12]
+WARNING: [Synth 8-327] inferring latch for variable 'pulse_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v:8]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:18 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'round_ct' (counter) to 'seq_ct'
+INFO: [Synth 8-223] decloning instance 'round_ct' (counter) to 'score_ct'
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   22 Bit       Adders := 4     
+	   2 Input   18 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
++---XORs : 
+	   4 Input      1 Bit         XORs := 2     
 +---Registers : 
-	                1 Bit    Registers := 12    
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 4     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 15    
 +---Muxes : 
+	   2 Input   18 Bit        Muxes := 1     
+	   8 Input   18 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 2     
 	   2 Input    3 Bit        Muxes := 2     
 	   4 Input    3 Bit        Muxes := 1     
 	   5 Input    2 Bit        Muxes := 1     
 	   2 Input    2 Bit        Muxes := 3     
 	   4 Input    2 Bit        Muxes := 2     
 	   5 Input    1 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 3     
 	   4 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -267,39 +316,121 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3917] design top has port simon_led0[2] driven by constant 0
-WARNING: [Synth 8-3917] design top has port simon_led0[0] driven by constant 0
-WARNING: [Synth 8-3917] design top has port simon_led1[2] driven by constant 0
-WARNING: [Synth 8-3917] design top has port simon_led1[1] driven by constant 0
-WARNING: [Synth 8-3917] design top has port simon_led2[1] driven by constant 0
-WARNING: [Synth 8-3917] design top has port simon_led2[0] driven by constant 0
-WARNING: [Synth 8-3917] design top has port simon_led3[2] driven by constant 0
 WARNING: [Synth 8-7129] Port sw[3] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[1] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[0] in module top is either unconnected or has no load
-WARNING: [Synth 8-3332] Sequential element (simon_button_loc/button_loc_reg[1]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (simon_button_loc/button_loc_reg[0]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (seq_timer/pulse_reg) is unused and will be removed from module top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:20 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:26 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:26 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[21] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[21]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[20] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[20]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[19] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[19]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[18] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[18]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[17] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[17]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[16] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[16]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[15] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[15]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[14] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[14]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[13] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[13]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[12] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[12]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[11] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[11]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[10] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[10]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[9] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[9]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[8] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[8]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[7] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[7]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[6] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[6]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[5] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[5]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[4] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[4]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[3] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[3]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[2] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[2]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[1] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[1]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[0] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[0]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[21] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[21]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[20] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[20]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[19] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[19]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[18] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[18]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[17] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[17]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[16] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[16]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[15] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[15]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[14] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[14]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[13] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[13]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[12] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[12]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[11] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[11]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[10] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[10]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[9] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[9]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[8] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[8]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[7] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[7]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[6] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[6]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[5] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[5]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[4] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[4]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[3] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[3]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[2] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[2]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[1] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[1]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s1/timer_reg[0] ) from module (top) as it has self-loop and (\deb_s1/timer_reg[0]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[21] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[21]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[20] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[20]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[19] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[19]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[18] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[18]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[17] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[17]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[16] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[16]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[15] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[15]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[14] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[14]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[13] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[13]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[12] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[12]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[11] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[11]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[10] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[10]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[9] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[9]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[8] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[8]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[7] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[7]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[6] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[6]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[5] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[5]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[4] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[4]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[3] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[3]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[2] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[2]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[1] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[1]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s2/timer_reg[0] ) from module (top) as it has self-loop and (\deb_s2/timer_reg[0]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[21] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[21]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[20] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[20]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[19] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[19]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[18] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[18]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[17] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[17]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[16] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[16]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[15] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[15]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[14] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[14]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[13] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[13]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[12] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[12]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[11] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[11]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[10] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[10]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[9] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[9]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[8] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[8]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[7] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[7]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[6] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[6]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[5] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[5]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[4] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[4]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[3] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[3]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[2] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[2]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[1] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[1]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[0] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[0]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+WARNING: [Synth 8-3332] Sequential element (simon_button_loc/button_loc_reg[1]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (simon_button_loc/button_loc_reg[0]) is unused and will be removed from module top.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:26 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -317,37 +448,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -365,37 +496,37 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |     5|
-|3     |LUT1   |     5|
+|3     |LUT1   |     1|
 |4     |LUT2   |     1|
 |5     |LUT4   |     2|
 |6     |LUT6   |     5|
 |7     |FDRE   |    19|
-|8     |IBUF   |     5|
+|8     |IBUF   |     1|
 |9     |OBUF   |    16|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1596.148 ; gain = 661.789
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:30 . Memory (MB): peak = 1569.859 ; gain = 558.605
-Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:32 . Memory (MB): peak = 1569.859 ; gain = 652.848
+Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:17 . Memory (MB): peak = 1596.148 ; gain = 561.648
+Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:19 . Memory (MB): peak = 1596.148 ; gain = 661.789
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1569.859 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1596.148 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1569.859 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1596.148 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: f46c793f
+Synth Design complete | Checksum: 521892c6
 INFO: [Common 17-83] Releasing license: Synthesis
-33 Infos, 70 Warnings, 40 Critical Warnings and 0 Errors encountered.
+141 Infos, 81 Warnings, 40 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:51 . Memory (MB): peak = 1569.859 ; gain = 1052.785
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 1596.148 ; gain = 1061.199
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1569.859 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1596.148 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 30 23:13:59 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  3 10:36:21 2024...

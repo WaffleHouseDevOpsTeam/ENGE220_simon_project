@@ -9,42 +9,62 @@ module top(
 );
 
         wire [3:0] simon_buttons = ~simon_buttons_n;
+        
+         // timer localparams
+        localparam ONESEC = 10_000_000, HALFSEC = 50_000_000, TRIPLESEC = 7_500_000;
+        
+        //  states for state machine NEED TO MAKE MORE STATES, Keep it simple!
+        localparam IDLE = 0, RANDOMIZE = 1, 
+                SEQUENCE = 2, USERINPUT = 3,
+                CORRECT = 4, SEQUENCECOMPLETE = 5, 
+                INCORRECT = 6;
 
-        //  debounced simon buttons, the state machine inputs   
+
+        //  State Machine Inputs
         wire [3:0] deb_held;
         wire [3:0] deb_press;
         wire button_ctrl_out;
-
-        reg [7:0] score_count, round_count;
-
-
-        //  states for state machine NEED TO MAKE MORE STATES, Keep it simple!
-        localparam IDLE = 0, RANDOMIZE = 1, 
-        SEQUENCE = 2, USERINPUT = 3,
-        CORRECT = 4, SEQUENCECOMPLETE = 5, 
-        INCORRECT = 6;
-
-        reg [4:0] c_state, n_state; 
-
-        //  state machine outputs
-        //  missing lcd out and a few others, will probably be reg
-        reg [1:0] color, rand_color, sel_color;
-        reg led_enable, step, randomize, play_seq, rerun;
         reg reset;
+
+        //  State Machine Outputs
+        //  color selection
+        reg [1:0] color;
+        wire [1:0] rand_color, sel_color;
+        reg color_enable;
         
-        reg [24:0] timer_loadvalue;
-        reg timer_reset, timer_enable;
-        reg score_count_reset, score_count_enable;
-        reg round_count_reset, round_count_enable;
+        // PRNG
+        reg led_enable, randomize, play_seq, rerun;
         reg rand_reset;
-        reg color_enable, tone_enable;
-        reg [6:0] round_count, rounds, key_sequence_count;
+
+        // round counting
+        reg round_count_reset, round_count_enable, round_count_tick;
+        wire [6:0] round_count;
+        
+        // sequence counting
+        reg [24:0] timer_loadvalue;
+        reg timer_reset, timer_enable, seq_count_tick;
+        reg [6:0] key_sequence_count;
+        reg seq_timer_reset, seq_timer_enable;
+        wire seq_timer_pulse;
+        
+        // score counting
+        reg score_count_reset, score_count_enable;
+        wire [7:0] score_count;
+        
+        reg seq_flag, score_flag, round_flag;
+        reg [7:0] seg_val, score_val, round_val;
+        
+        // Speaker / Tones
+        reg tone_enable;
         wire [17:0] note_wr;
         wire [2:0] note_sel;
-
-	reg seq_count_tick, round_count_tick;
-	reg round_count, seq_count;
-
+        
+        // LCD
+        
+        // state machine internal
+        reg [4:0] c_state, n_state; 
+       
+        
         debouncer deb_s0 (
                 .pressed(deb_press [0]), 
                 .held(deb_held [0]),
@@ -92,17 +112,19 @@ module top(
 
         PRNG simon_rand(
                 .random(rand_color),
-                .step(step),
+                .step(seq_timer_pulse),
                 .rerun(rerun),
                 .randomize(randomize),
                 .clk(clk),
                 .reset(rand_reset)
         );
+        
         scale_decoder simon_scl_dec (
                 .note(note_wr),
                 .sel(note_sel),
                 .enable(1)       
         );
+        
         speakerselect simon_spk (
                 .speaker(speaker),
                 .note(note_wr),
@@ -110,51 +132,68 @@ module top(
                 .clk(clk)
         );
 
-	counter round_ct (
-		.count(round_count),
-		.pulse(round_count_tick),
-		.reset(round_count_reset),
-		.enable(round_count_enable),
-		.clk(clk)
-	);
-
-	counter seq_ct (
-		.count(key_sequece_count),
-		.pulse(seq_count_tick),
-		.reset(seq_count_reset),
-		.enable(seq_count_enable),
-		.clk(clk)
-	);
-
-	counter score_ct(
-		.count(score_count),
-		.pulse(score_count_tick),
-		.reset(score_count_reset),
-		.enable(score_count_enable),
-		.clk(clk)
-	);
-
-        assign led = c_state;
+        counter round_ct (
+            .count(round_count),
+            .pulse(round_count_tick),
+            .reset(round_count_reset),
+            .enable(round_count_enable),
+            .clk(clk),
+            .countflag(),
+            .countval()
+        );
+    
+        counter seq_ct (
+            .count(key_sequece_count),
+            .pulse(seq_count_tick),
+            .reset(seq_count_reset),
+            .enable(seq_count_enable),
+            .clk(clk),
+            .countflag(),
+            .countval()
+        );
+    
+        counter score_ct(
+            .count(score_count),
+            .pulse(score_count_tick),
+            .reset(score_count_reset),
+            .enable(score_count_enable),
+            .clk(clk),
+            .countflag(),
+            .countval()
+        );
         
+        timer seq_timer(
+            .pulse(seq_timer_pulse),
+            .clk(clk), 
+            .reset(seq_timer_reset), 
+            .enable(seq_timer_enable), 
+            .loadvalue(ONESEC)
+        );
+
+    assign led = deb_held;
+    
+    always @* begin
+        led_enable = 1;
+        color = sel_color;
+    end
+/*        
 	always @(posedge clk) begin
                 c_state <= n_state;  
         end
 
         always @* begin
-                n_state = c_state;
+//                n_state = c_state;
                 timer_reset = 0;
                 timer_enable = 0;
                 timer_loadvalue = 0;
                 score_count_reset = 0;
                 score_count_enable = 0;
-                round_count_reset = 0;
                 round_count_enable = 0;
         end
-
         always @* begin    
                 case(c_state)
                         IDLE: begin
-                                round = 1; // set round to 1
+                                round_count_reset = 1; // set round to 1
                                 // this is our RESET state
                                 led_enable = 0;  // keeps leds dim
                                 if (deb_held[0]) begin // when button input, move to randomize
@@ -186,8 +225,7 @@ module top(
                                 // the timing and counting should happen via
                                 // a counter module, which should deal with
                                 // all of this
-                                if (key_sequence_count <= rounds) begin
-                                        rand_color = random;
+                                if (key_sequence_count <= round_count) begin
                                         led_enable = 1;
                                         color = rand_color;
                                 end else begin
@@ -208,8 +246,8 @@ module top(
 
                         USERINPUT: begin
                                 if (deb_held != 4'b0000) begin
-                                        color = color_sel;
-                                        if (color_sel == something /* idk something goes here */) begin
+                                        color = sel_color;
+                                        if (sel_color == rand_color) begin
                                         
                                         end
                                 end
@@ -247,5 +285,5 @@ module top(
                         end
                 endcase
         end
-
+*/
         endmodule
