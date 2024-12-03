@@ -101,9 +101,7 @@ module top(
 
         button_ctrl simon_button_loc (
                 .button_loc(sel_color),
-                .button_in(deb_press),
-                .button_out(button_ctrl_out),
-                .enable(1)
+                .button_in(deb_held)
         );
 
         led_ctrl simon_color_ctrl (
@@ -112,8 +110,8 @@ module top(
                 .led2(simon_led2), 
                 .led3(simon_led3), 
                 .clk(clk), 
-                .color(color), 
-                .enable(1)
+                .color(sel_color), 
+                .enable(sw [0])
         );
 
         PRNG simon_rand(
@@ -176,7 +174,7 @@ module top(
             .loadvalue(ONESEC)
         );
 
-    assign led = deb_held;
+    assign led [1:0] = sel_color;
     
     always @* begin
         led_enable = 1;
