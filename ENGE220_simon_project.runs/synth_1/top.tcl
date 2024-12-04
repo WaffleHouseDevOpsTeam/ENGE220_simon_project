@@ -86,6 +86,7 @@ read_verilog -library xil_defaultlib {
   //ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/PRNG.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/not_top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

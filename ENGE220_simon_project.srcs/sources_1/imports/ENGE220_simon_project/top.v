@@ -1,4 +1,3 @@
-// Nothing goes in this module
 // just module instances and the state machine!
 module top(
         output [2:0] simon_led0, simon_led1, simon_led2, simon_led3,
@@ -23,6 +22,7 @@ module top(
         //  State Machine Inputs
         wire [3:0] deb_held;
         wire [3:0] deb_press;
+        wire deb_held_enable = deb_held[0] | deb_held[1] | deb_held[2] | deb_held[3];
         wire button_ctrl_out;
         reg reset;
 
@@ -101,7 +101,8 @@ module top(
 
         button_ctrl simon_button_loc (
                 .button_loc(sel_color),
-                .button_in(deb_held)
+                .button_in(deb_press),
+                .clk(clk)
         );
 
         led_ctrl simon_color_ctrl (
@@ -111,7 +112,7 @@ module top(
                 .led3(simon_led3), 
                 .clk(clk), 
                 .color(sel_color), 
-                .enable(sw [0])
+                .enable(deb_held_enable)
         );
 
         PRNG simon_rand(
@@ -174,13 +175,8 @@ module top(
             .loadvalue(ONESEC)
         );
 
-    assign led [1:0] = sel_color;
-    
-    always @* begin
-        led_enable = 1;
-        color = sel_color;
-    end
-/*        
+    assign led [1:0] = c_state;
+          
 	always @(posedge clk) begin
                 c_state <= n_state;  
         end
@@ -289,5 +285,4 @@ module top(
                         end
                 endcase
         end
-*/
         endmodule
