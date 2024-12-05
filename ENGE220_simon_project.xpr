@@ -214,6 +214,96 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/LCD_always.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/LCD_always.v"/>
+          <Attr Name="ImportTime" Val="1731994676"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/speakerselect.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/speakerselect.v"/>
+          <Attr Name="ImportTime" Val="1732042774"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/seg_ctrl.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/seg_ctrl.v"/>
+          <Attr Name="ImportTime" Val="1731994678"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/pulsewidth_ctrl.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/pulsewidth_ctrl.v"/>
+          <Attr Name="ImportTime" Val="1729552860"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/hex_seven_seg_decoder.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/hex_seven_seg_decoder.v"/>
+          <Attr Name="ImportTime" Val="1727201888"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/unsigned_to_ASCII.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/unsigned_to_ASCII.v"/>
+          <Attr Name="ImportTime" Val="1731994676"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/seven_seg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/seven_seg.v"/>
+          <Attr Name="ImportTime" Val="1731994677"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/add3.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/add3.v"/>
+          <Attr Name="ImportTime" Val="1731994676"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/lcd_ctrl.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/lcd_ctrl.v"/>
+          <Attr Name="ImportTime" Val="1731994677"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/Downloads/lcd_string.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="//ceng/dblue23/Downloads/lcd_string.v"/>
+          <Attr Name="ImportTime" Val="1731994677"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="top"/>
