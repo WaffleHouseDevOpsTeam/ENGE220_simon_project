@@ -82,11 +82,22 @@ read_verilog -library xil_defaultlib {
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v
-  //ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/LFSR.v
-  //ceng/dblue23/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/PRNG.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/not_top.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/LCD_always.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/speakerselect.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/seg_ctrl.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/pulsewidth_ctrl.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/hex_seven_seg_decoder.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/unsigned_to_ASCII.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/seven_seg.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/add3.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/PRNG.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/LFSR.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/top_test.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

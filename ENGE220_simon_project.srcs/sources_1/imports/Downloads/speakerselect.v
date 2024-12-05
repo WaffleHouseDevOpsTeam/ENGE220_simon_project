@@ -1,6 +1,6 @@
 module speakerselect(
 	output reg speaker, 
-	input [17:0] sw, 
+	input [17:0] note, 
 	input clk
 );
 
@@ -9,7 +9,7 @@ module speakerselect(
 	reg [17:0] counter;
 
 	always @* begin
-		count_val = {sw};
+		count_val = {note};
 
 		if (counter == (count_val >> 1)) begin
 			speaker <= 0;

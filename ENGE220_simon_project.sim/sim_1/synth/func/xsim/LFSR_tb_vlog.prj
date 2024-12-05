@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"LFSR_tb_func_synth.v" \
+"../../../../../ENGE220_simon_project.srcs/sim_1/new/button_ctrl_tb.v" \
+"../../../../../ENGE220_simon_project.srcs/sim_1/new/debounce_tb.v" \
+"../../../../../ENGE220_simon_project.srcs/sim_1/new/counter_tb.v" \
+"../../../../../ENGE220_simon_project.srcs/sim_1/new/led_ctrl_tb.v" \
+"../../../../../ENGE220_simon_project.srcs/sim_1/new/top_tb.v" \
+
+# Do not sort compile order
+nosort

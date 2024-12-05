@@ -1,22 +1,32 @@
-module timer (output reg pulse,
-input clk, reset, enable, input [24:0] loadvalue);
+module timer (output reg pulse, output reg hold,
+input clk, reset, enable);
 
+localparam ONESEC = 100_000_000, HALFSEC = 50_000_000, TRIPLESEC = 75_000_000;
 reg [25:0] counter;
-
-always @* begin
-    if (enable) begin
-        if (counter == 0) pulse = 1;
-        if (reset) pulse = 0;
-    end
-end
 
 always @(posedge clk) begin
     if (enable) begin
-        counter = counter - 1;
-        if ((counter == 0) || (reset)) counter = loadvalue;
+        counter <= counter + 1;
+        if ((counter == ONESEC) || (reset)) begin
+            counter <= 0;
+        end
+	end
+end
+
+// pulse
+always @* begin
+	if (counter == 0) begin
+		pulse = 1;
+	end else begin
+	   pulse = 0;
+	end
+end	
+
+always @* begin
+    hold = 0;
+    if ((counter > 0) && (counter < TRIPLESEC)) begin
+        hold = 1;
     end
 end
-// basically this should load a counter with a target value (time input) 
-// count down from it to 0, output pulse when it hits 0, and then reset itself 
-
 endmodule
+

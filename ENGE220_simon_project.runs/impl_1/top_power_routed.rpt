@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Tue Dec  3 21:58:20 2024
+| Date             : Thu Dec  5 00:07:38 2024
 | Host             : WM106-ST08_01 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 4.815        |
+| Total On-Chip Power (W)  | 10.846       |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 4.726        |
-| Device Static (W)        | 0.089        |
+| Dynamic (W)              | 10.692       |
+| Device Static (W)        | 0.154        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 60.9         |
-| Junction Temperature (C) | 49.1         |
+| Max Ambient (C)          | 30.8         |
+| Junction Temperature (C) | 79.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.081 |      312 |       --- |             --- |
-|   LUT as Logic |     0.768 |      133 |     20800 |            0.64 |
-|   CARRY4       |     0.197 |       29 |      8150 |            0.36 |
-|   Register     |     0.110 |      125 |     41600 |            0.30 |
-|   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.646 |      195 |       --- |             --- |
-| I/O            |     2.998 |       21 |       106 |           19.81 |
-| Static Power   |     0.089 |          |           |                 |
-| Total          |     4.815 |          |           |                 |
+| Slice Logic    |     1.717 |     1131 |       --- |             --- |
+|   LUT as Logic |     1.351 |      349 |     20800 |            1.68 |
+|   CARRY4       |     0.220 |       41 |      8150 |            0.50 |
+|   Register     |     0.140 |      547 |     41600 |            1.31 |
+|   BUFG         |     0.006 |        3 |        32 |            9.38 |
+|   Others       |     0.000 |       21 |       --- |             --- |
+| Signals        |     1.183 |      745 |       --- |             --- |
+| I/O            |     7.792 |       44 |       106 |           41.51 |
+| Static Power   |     0.154 |          |           |                 |
+| Total          |    10.846 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,16 +71,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.772 |       1.748 |      0.024 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.123 |       0.109 |      0.014 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.844 |       0.843 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     3.000 |       2.924 |      0.076 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.305 |       0.285 |      0.020 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     2.200 |       2.199 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.002 |       0.000 |      0.002 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -138,13 +138,19 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| top                |     4.726 |
-|   deb_s0           |     0.380 |
-|   deb_s1           |     0.396 |
-|   deb_s2           |     0.390 |
-|   deb_s3           |     0.384 |
-|   simon_button_loc |     0.022 |
-|   simon_color_ctrl |     0.127 |
+| top                |    10.692 |
+|   LCDstringer      |     0.906 |
+|     lcd1           |     0.354 |
+|   deb_s0           |     0.388 |
+|   deb_s1           |     0.385 |
+|   deb_s2           |     0.382 |
+|   deb_s3           |     0.394 |
+|   seq_t            |     0.013 |
+|   simon_button_loc |     0.009 |
+|   simon_color_ctrl |     0.147 |
+|   simon_rand       |     0.192 |
+|     u1             |     0.096 |
+|     u2             |     0.096 |
 +--------------------+-----------+
 
 

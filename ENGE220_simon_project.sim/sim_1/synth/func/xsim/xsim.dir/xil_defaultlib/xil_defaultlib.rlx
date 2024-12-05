@@ -1,0 +1,10 @@
+0.7
+2020.2
+May 22 2024
+19:03:11
+Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.sim/sim_1/synth/func/xsim/LFSR_tb_func_synth.v,1733376792,verilog,Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/button_ctrl_tb.v;Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/counter_tb.v;Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/debounce_tb.v;Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/led_ctrl_tb.v;Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/top_tb.v,Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/button_ctrl_tb.v,,$unit_LFSR_tb_func_synth_v_1797689323;LFSR;LFSR__parameterized0;PRNG;button_ctrl;counter;debouncer;debouncer_0;debouncer_1;debouncer_2;glbl;lcd_ctrl;lcd_string;led_ctrl;timer;top,,,,,,,,
+Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/button_ctrl_tb.v,1733280669,verilog,,Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/debounce_tb.v,,button_ctrl_tb,,,,,,,,
+Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/counter_tb.v,1733246302,verilog,,Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/led_ctrl_tb.v,,counter_tb,,,,,,,,
+Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/debounce_tb.v,1733183988,verilog,,Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/counter_tb.v,,debounce_tb,,,,,,,,
+Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/led_ctrl_tb.v,1733281826,verilog,,Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/top_tb.v,,led_ctrl_tb,,,,,,,,
+Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sim_1/new/top_tb.v,1733282278,verilog,,,,tb_top,,,,,,,,
