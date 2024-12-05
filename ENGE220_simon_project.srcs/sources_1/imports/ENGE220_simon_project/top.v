@@ -267,14 +267,14 @@ module top(
                                 seq_timer_reset = 0;
                                 seq_timer_enable = 1;
                                 if (key_sequence_count <= 5) begin
-                                        led_enable = seq_timer_hold;
-                                        seq_count_enable = 1;
-                                        seq_timer_enable = 1;
-                                        n_state = SEQUENCE;
-                                        color = rand_color;
-                                        rerun = 0;
-                                        seq_count_reset = 0;
-                                        round_count_reset = 0;
+                                        led_enable = seq_timer_hold; // turns LEDs on while seq_timer_pulse is high
+                                        seq_count_enable = 1; // enables sequence counter, will count if pulse is high
+                                        seq_timer_enable = 1; // enables timer, outputs pulse (every sec) and hold (for 3/4 sec)
+                                        n_state = SEQUENCE; // keeps in sequence state
+                                        color = rand_color; // selects a random color for simon
+                                        rerun = 0; // doesn't rerun randomization
+                                        seq_count_reset = 0;  
+                                        round_count_reset = 0; 
                                        // waits
                                        // do again?
                                 end else begin
