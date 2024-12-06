@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Fri Dec  6 00:34:14 2024
+| Date         : Fri Dec  6 06:31:22 2024
 | Host         : WM106-ST08_01 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    30 |
-|    Minimum number of control sets                        |    30 |
+| Total control sets                                       |    32 |
+|    Minimum number of control sets                        |    32 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   123 |
+| Unused register locations in slices containing registers |   140 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    30 |
-| >= 0 to < 4        |    10 |
+| Total control sets |    32 |
+| >= 0 to < 4        |    12 |
 | >= 4 to < 6        |     3 |
 | >= 6 to < 8        |     0 |
-| >= 8 to < 10       |     4 |
+| >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |    13 |
+| >= 16              |    14 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              72 |           39 |
+| No           | No                    | No                     |             149 |           61 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             124 |           35 |
-| Yes          | No                    | No                     |             267 |           67 |
+| No           | Yes                   | No                     |             128 |           37 |
+| Yes          | No                    | No                     |             265 |           50 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             102 |           26 |
+| Yes          | Yes                   | No                     |             102 |           21 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,36 +73,38 @@ Table of Contents
 +-------------------------------+----------------------------------+--------------------------------------+------------------+----------------+--------------+
 |          Clock Signal         |           Enable Signal          |           Set/Reset Signal           | Slice Load Count | Bel Load Count | Bels / Slice |
 +-------------------------------+----------------------------------+--------------------------------------+------------------+----------------+--------------+
-|  seq_ct/c_state_reg[2]_2      |                                  |                                      |                1 |              1 |         1.00 |
-|  deb_s0/c_state_reg[0]        |                                  |                                      |                1 |              1 |         1.00 |
-|  deb_s0/c_state_reg[2]_0      |                                  |                                      |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG                | LCDstringer/lcd1/lcd_enable1_out |                                      |                1 |              1 |         1.00 |
-|  non_seq_b_reg_i_2_n_0        |                                  |                                      |                1 |              1 |         1.00 |
-|  rand_reset_reg_i_2_n_0       |                                  |                                      |                1 |              1 |         1.00 |
-|  led_enable_reg_i_2_n_0       |                                  |                                      |                1 |              1 |         1.00 |
-|  randomize_reg_i_2_n_0        |                                  |                                      |                1 |              1 |         1.00 |
+|  pulse_reg_i_2_n_1            |                                  |                                      |                1 |              1 |         1.00 |
+|  non_seq_b_reg_i_1_n_1        |                                  |                                      |                1 |              1 |         1.00 |
+|  led_enable_reg_i_2_n_1       |                                  |                                      |                1 |              1 |         1.00 |
+|  rand_reset_reg_i_2_n_1       |                                  |                                      |                1 |              1 |         1.00 |
+|  seq_count_enable_reg_i_2_n_1 |                                  |                                      |                1 |              1 |         1.00 |
+|  seq_timer_enable_reg_i_2_n_1 |                                  |                                      |                1 |              1 |         1.00 |
+|  randomize_reg_i_2_n_1        |                                  |                                      |                1 |              1 |         1.00 |
+|  seq_ct/c_state_reg[1]        |                                  |                                      |                1 |              1 |         1.00 |
+|  deb_s0/c_state_reg[3]        |                                  |                                      |                1 |              1 |         1.00 |
+|  deb_s0/c_state_reg[3]_2      |                                  |                                      |                1 |              1 |         1.00 |
 |  seq_ct/E[0]                  |                                  |                                      |                1 |              2 |         2.00 |
-|  seq_count_enable_reg_i_2_n_0 |                                  |                                      |                2 |              2 |         1.00 |
+|  clk_IBUF_BUFG                |                                  | btnC_IBUF                            |                2 |              4 |         2.00 |
 |  clk_IBUF_BUFG                | LCDstringer/lcd1/state_reg[0]    |                                      |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG                | LCDstringer/lcd1/state_reg[1]    |                                      |                1 |              4 |         4.00 |
-|  n_state_reg[2]_i_2_n_0       |                                  |                                      |                3 |              4 |         1.33 |
-|  clk_IBUF_BUFG                | seq_ct/count[7]_i_2_n_0          | seq_ct/count[7]_i_1_n_0              |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG                | LCDstringer/address[7]_i_1_n_0   |                                      |                3 |              8 |         2.67 |
-|  player_score_reg[7]_i_2_n_0  |                                  |                                      |                4 |              8 |         2.00 |
-|  clk_IBUF_BUFG                | LCDstringer/lcd1/lcd_regsel0     |                                      |                4 |              9 |         2.25 |
-|  clk_IBUF_BUFG                | LCDstringer/lcd1/p_0_in          |                                      |                4 |             18 |         4.50 |
-|  clk_IBUF_BUFG                |                                  | simon_color_ctrl/timer[0]_i_1__0_n_0 |                5 |             19 |         3.80 |
+|  clk_IBUF_BUFG                | LCDstringer/lcd1/state_reg[3]    |                                      |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                | LCDstringer/address[7]_i_1_n_1   |                                      |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                | seq_ct/count[7]_i_2_n_1          | seq_ct/count[7]_i_1_n_1              |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                | LCDstringer/lcd1/lcd_regsel0     |                                      |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG                | LCDstringer/lcd1/p_0_in          |                                      |                6 |             18 |         3.00 |
+|  clk_IBUF_BUFG                |                                  | simon_color_ctrl/timer[0]_i_1__0_n_1 |                5 |             19 |         3.80 |
+|  clk_IBUF_BUFG                |                                  | deb_s3/bt_samp                       |                6 |             21 |         3.50 |
+|  clk_IBUF_BUFG                |                                  | st_pulse/bt_samp                     |                6 |             21 |         3.50 |
 |  clk_IBUF_BUFG                |                                  | deb_s0/bt_samp                       |                6 |             21 |         3.50 |
 |  clk_IBUF_BUFG                |                                  | deb_s1/bt_samp                       |                6 |             21 |         3.50 |
 |  clk_IBUF_BUFG                |                                  | deb_s2/bt_samp                       |                6 |             21 |         3.50 |
-|  clk_IBUF_BUFG                |                                  | deb_s3/bt_samp                       |                6 |             21 |         3.50 |
-|  clk_IBUF_BUFG                |                                  | st_pulse/bt_samp                     |                6 |             21 |         3.50 |
 |  clk_IBUF_BUFG                | seq_timer_enable                 | seq_t/counter                        |                8 |             30 |         3.75 |
-|  clk_IBUF_BUFG                | simon_rand/u2/E[0]               | rand_reset                           |                6 |             32 |         5.33 |
-|  clk_IBUF_BUFG                | simon_rand/u1/E[0]               | rand_reset                           |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG                |                                  |                                      |               22 |             49 |         2.23 |
-|  clk_IBUF_BUFG                | LCDstringer/line1[126]_i_1_n_0   |                                      |               27 |            111 |         4.11 |
-|  clk_IBUF_BUFG                | LCDstringer/line2[126]_i_1_n_0   |                                      |               26 |            112 |         4.31 |
+|  clk_IBUF_BUFG                | simon_rand/u1/E[0]               | rand_reset                           |                5 |             32 |         6.40 |
+|  clk_IBUF_BUFG                | simon_rand/u2/E[0]               | rand_reset                           |                5 |             32 |         6.40 |
+|  clk_IBUF_BUFG                |                                  |                                      |               21 |             43 |         2.05 |
+|  n_0_693_BUFG                 |                                  |                                      |               29 |             94 |         3.24 |
+|  clk_IBUF_BUFG                | LCDstringer/line2[126]_i_1_n_1   |                                      |               17 |            110 |         6.47 |
+|  clk_IBUF_BUFG                | LCDstringer/line1[126]_i_1_n_1   |                                      |               19 |            111 |         5.84 |
 +-------------------------------+----------------------------------+--------------------------------------+------------------+----------------+--------------+
 
 

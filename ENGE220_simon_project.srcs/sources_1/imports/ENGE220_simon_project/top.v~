@@ -34,7 +34,8 @@ INCORRECT = 6, WAIT=7;
         //  State Machine Outputs
         //  color selection
         reg [1:0] color;
-        wire [1:0] rand_color, sel_color, compare_color;
+        wire [9:0] rand_color;
+        wire [1:0] sel_color, compare_color;
         reg color_enable;
 
         // PRNG
@@ -97,6 +98,8 @@ INCORRECT = 6, WAIT=7;
                 .button(non_seq_b),
                 .clk(clk)
         );
+        
+        
 
         debouncer deb_s0 (
                 .pressed(deb_press[0]), 
@@ -147,9 +150,20 @@ INCORRECT = 6, WAIT=7;
                 .color(color), 
                 .enable(led_enable)
         );
-
+        
+        wire [1:0] rand_to_store;
+        reg reg_clear;
+        /*
+        shift_reg rand_store(
+                .bits_out(rand_color),
+                .bits_in(rand_to_store),
+                .clk(clk),
+                .clear(reg_clear),
+                .shift(pulse)    
+        );
+        */
         PRNG simon_rand(
-                .random(rand_color),
+                .random(rand_color [9:8]),
                 .step(pulse),
                 .rerun(rerun),
                 .randomize(randomize),
@@ -193,8 +207,7 @@ INCORRECT = 6, WAIT=7;
         );
 
         assign led [1:0] = c_state;
-        assign led [3:2] = rand_color;
-        assign led [12:4] = key_sequence_count;
+        assign led [12:2] = rand_color;
         assign led [13] = seq_timer_hold;
         assign led [15:14] = sel_color;
 
@@ -217,9 +230,10 @@ end
 always @* begin    
         case(c_state)
                 IDLE: begin
+                        reg_clear = 1;
                         pulse = non_seq_pulse;
                         rand_reset = 0;
-                        //                              lcd_reset = 0;
+                        // lcd_reset = 0;
                         round_count_reset = 1;
                         seq_count_reset = 1;
                         // this is our RESET state
@@ -232,7 +246,7 @@ always @* begin
                         rerun = 0;
                         seq_count_reset = 1;
                         round_count_reset = 1;
-                        color = sel_color;
+                        color = rand_color [9:8];
                         if (deb_held[0]) begin
                                 rand_reset = 1; // when button input, move to randomize
                                 led_enable = 1; // LEDs can turn on. for some reason all of them do?
@@ -247,7 +261,9 @@ always @* begin
                 end
 
                 RANDOMIZE: begin
+                        reg_clear = 0;
                         pulse = non_seq_pulse;
+                        color = sel_color;
                         rand_reset = 0;
                         randomize = 0;
                         n_state = RANDOMIZE;
@@ -277,20 +293,22 @@ always @* begin
                         seq_timer_enable = 1; 
                         seq_count_enable = 1;
                         pulse = seq_timer_pulse;
-                        topline =    "PLEASE WAIT     ";
-                        bottomline = "INITIALIZING....";
+                        topline =    "INITIALIZING....";
+                        bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
                         n_state = WAIT;
-                        if ((key_sequence_count > 1 )) begin
+                        if ((key_sequence_count >  1 )) begin
                                 seq_timer_reset = 1;
                                 seq_count_reset = 1;
                                 seq_timer_enable = 0;
                                 seq_count_enable = 0;
+                                rerun = 1;
                                 n_state = SEQUENCE;
 
                         end
                 end
 
                 SEQUENCE: begin
+                        rerun = 0;
                         seq_timer_enable = 1; 
                         seq_count_enable = 1; 
 
@@ -304,23 +322,15 @@ always @* begin
                         led_enable = 0; // turns off LEDs
                         seq_timer_reset = 0;
                         n_state = SEQUENCE; // keeps in sequence state
-                        if ((key_sequence_count < 3)) begin
-                                topline = "WATCH CLOSELY...";
-                                bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
+                        if (key_sequence_count < 3) begin
                                 led_enable = seq_timer_hold; // turns LEDs on while seq_timer_pulse is high
                                 // enables timer, which will output pulse (every sec) and hold (for 3/4 sec)
-                                color = rand_color; // selects the random color for simon
+                                color = rand_color [9:8]; // selects the random color for simon
                                 rerun = 0; 
                                 seq_count_reset = 0;  
                                 round_count_reset = 0; 
-                                // wakits you know 
-                                // do again?
-                                // KEY_SEQ_COUNT IS NOT INCREMENTING,  COLOR IS JUST AN INFINITE? RANDOM SEQUENCE
                         end else begin
-                                seq_count_enable = 0;
-                                seq_timer_enable = 0;
-                                rerun = 1;
-                                round_count_reset = 1;
+                                pulse = 0;
                                 seq_count_reset = 1;
                                 //seq_timer_reset = 1;
                                 seq_timer_enable = 0;
@@ -334,6 +344,8 @@ always @* begin
                         non_seq_b = 0;
                         pulse = non_seq_pulse;
                         seq_count_reset = 0;
+                        seq_timer_enable = 0; 
+                        seq_count_enable = 1; 
 
                         //                            compare_color = rand_color;
                         // this should rerun PRNG, output is same. so rand color should be right?
@@ -341,22 +353,25 @@ always @* begin
                         bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
                         led_enable = 0;
                         n_state = USERINPUT;
-                        color = sel_color;
+//                        color = sel_color;
                         // cheat mode reset 
+                      
                         if (btnR) begin
                                 rerun = 1;
                                 seq_timer_reset = 1;
                                 seq_count_reset = 1;
-                                n_state = SEQUENCE;
+                                n_state = WAIT;
                         end
                         if (deb_press != 4'b0000) begin
                                 led_enable = 1;
-                                if (sel_color == rand_color) begin
+                                color = sel_color;
+                                if (sel_color == rand_color [9:8]) begin
                                         n_state = CORRECT;
                                 end else begin
                                         n_state = INCORRECT;
                                 end
                         end 
+                        
                         // when user presses a button, it lights up and plays tone
                         // button debouncing necessary so that each is only registered once
                         // once button released, compare to appropriate key in sequence 
@@ -368,7 +383,8 @@ always @* begin
                 end
 
                 CORRECT: begin
-                        pulse = non_seq_pulse;
+                        
+//                      pulse = non_seq_pulse;
                         n_state = CORRECT;
                         // increment key_sequence_count
                         // go back to USERINPUT, unless
@@ -383,7 +399,7 @@ always @* begin
 
                 SEQUENCECOMPLETE: begin
                         player_score = player_score + 1;
-                        topline =    "INPUT CORRECT :)";
+                        topline =     "SCORE INCREASED!";
                         bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
 
                         // if USERINPUT is successful, play a success tone

@@ -97,6 +97,7 @@ read_verilog -library xil_defaultlib {
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/LFSR.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/top_test.v
   Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/lab11code/binary_to_BCD.v
+  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/shift_reg.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

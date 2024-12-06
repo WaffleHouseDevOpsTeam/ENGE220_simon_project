@@ -21,7 +21,7 @@ localparam ONESEC = 10_000_000, HALFSEC = 50_000_000, TRIPLESEC = 7_500_000;
 localparam IDLE = 0, RANDOMIZE = 1, 
 SEQUENCE = 2, USERINPUT = 3,
 CORRECT = 4, SEQUENCECOMPLETE = 5, 
-INCORRECT = 6, WAIT=7;
+INCORRECT = 6, WAIT=7, HOLD=8, WAITTWO=9;
 
 
         //  State Machine Inputs
@@ -30,11 +30,13 @@ INCORRECT = 6, WAIT=7;
         wire deb_held_enable = deb_held[0] | deb_held[1] | deb_held[2] | deb_held[3];
         wire button_ctrl_out;
         reg reset, lcd_reset;
+        reg [1:0] round_color;
 
         //  State Machine Outputs
         //  color selection
         reg [1:0] color;
-        wire [1:0] rand_color, sel_color, compare_color;
+        wire [1:0] rand_color;
+        wire [1:0] sel_color, compare_color;
         reg color_enable;
 
         // PRNG
@@ -97,7 +99,7 @@ INCORRECT = 6, WAIT=7;
                 .button(non_seq_b),
                 .clk(clk)
         );
-
+        
         debouncer deb_s0 (
                 .pressed(deb_press[0]), 
                 .held(deb_held[0]),
@@ -147,7 +149,18 @@ INCORRECT = 6, WAIT=7;
                 .color(color), 
                 .enable(led_enable)
         );
-
+        
+        wire [1:0] rand_to_store;
+        reg reg_clear;
+        /*
+        shift_reg rand_store(
+                .bits_out(rand_color),
+                .bits_in(rand_to_store),
+                .clk(clk),
+                .clear(reg_clear),
+                .shift(pulse)    
+        );
+        */
         PRNG simon_rand(
                 .random(rand_color),
                 .step(pulse),
@@ -192,10 +205,9 @@ INCORRECT = 6, WAIT=7;
                 .TENS(player_tens)
         );
 
-        assign led [1:0] = c_state;
+        assign led [1] = non_seq_b;
         assign led [3:2] = rand_color;
-        assign led [12:4] = key_sequence_count;
-        assign led [13] = seq_timer_hold;
+        assign led [13:4] = key_sequence_count;
         assign led [15:14] = sel_color;
 
         always @(posedge clk) begin
@@ -217,6 +229,7 @@ end
 always @* begin    
         case(c_state)
                 IDLE: begin
+                        reg_clear = 1;
                         pulse = non_seq_pulse;
                         rand_reset = 0;
                         // lcd_reset = 0;
@@ -232,7 +245,7 @@ always @* begin
                         rerun = 0;
                         seq_count_reset = 1;
                         round_count_reset = 1;
-                        color = rand_color;
+                        color = sel_color;
                         if (deb_held[0]) begin
                                 rand_reset = 1; // when button input, move to randomize
                                 led_enable = 1; // LEDs can turn on. for some reason all of them do?
@@ -247,6 +260,7 @@ always @* begin
                 end
 
                 RANDOMIZE: begin
+                        reg_clear = 0;
                         pulse = non_seq_pulse;
                         color = sel_color;
                         rand_reset = 0;
@@ -315,45 +329,36 @@ always @* begin
                                 seq_count_reset = 0;  
                                 round_count_reset = 0; 
                         end else begin
+                                pulse = 0;
                                 seq_count_reset = 1;
-                                rerun = 1;
                                 //seq_timer_reset = 1;
                                 seq_timer_enable = 0;
+                                rerun = 1;
                                 n_state = USERINPUT;
                         end
                 end
 
                 USERINPUT: begin
+                        pulse = non_seq_pulse;
                         rerun = 0;
+                        seq_timer_enable = 1;
+                        seq_count_enable = 1;
                         non_seq_b = 0;
-                        pulse = non_seq_b;
-                        seq_count_reset = 0;
-                        seq_timer_enable = 0; 
-                        seq_count_enable = 1; 
-
-                        //                            compare_color = rand_color;
-                        // this should rerun PRNG, output is same. so rand color should be right?
+                        color = sel_color;
                         topline =    "AWAITING INPUT..";
                         bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
                         led_enable = 0;
                         n_state = USERINPUT;
-                        color = sel_color;
+//                        color = sel_color;
                         // cheat mode reset 
+                        if (deb_press != 4'b0000) n_state = HOLD;
                         if (btnR) begin
+                                seq_timer_enable = 1;
                                 rerun = 1;
                                 seq_timer_reset = 1;
                                 seq_count_reset = 1;
                                 n_state = WAIT;
                         end
-                        if (deb_press != 4'b0000) begin
-                                led_enable = 1;
-                                color = sel_color;
-                                if (sel_color == rand_color) begin
-                                        n_state = CORRECT;
-                                end else begin
-                                        n_state = INCORRECT;
-                                end
-                        end 
                         
                         // when user presses a button, it lights up and plays tone
                         // button debouncing necessary so that each is only registered once
@@ -364,24 +369,46 @@ always @* begin
                         // if they don't, go to INCORRECT
 
                 end
+                
+                HOLD: begin
+                    seq_count_enable = 1;
+                    topline =    "HOLDING INPUT.. ";
+                    bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
+                    led_enable = 1;
+                    color = rand_color;
+                    n_state = HOLD;
+                    if (deb_held == 4'b0000) begin
+                        if (sel_color == rand_color) begin
+                            seq_count_enable = 1;
+                            n_state = CORRECT;
+                        end else begin
+                            n_state = INCORRECT;
+                        end
+                    end
+                end
 
                 CORRECT: begin
-                        
+                        seq_count_enable = 1;
                         pulse = non_seq_pulse;
+                        non_seq_b = 1;
+                        led_enable = 0;
                         n_state = CORRECT;
+                        if (key_sequence_count < 3) begin
+                            n_state = USERINPUT;
+                        end else begin
+                            n_state = SEQUENCECOMPLETE;
+                        end
                         // increment key_sequence_count
                         // go back to USERINPUT, unless
                         topline =    "INPUT CORRECT :)";
                         bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
-
-                        non_seq_b = 1;
 
 
 
                 end
 
                 SEQUENCECOMPLETE: begin
-                        player_score = player_score + 1;
+                        n_state = SEQUENCECOMPLETE;
                         topline =     "SCORE INCREASED!";
                         bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
 
@@ -392,12 +419,9 @@ always @* begin
 
                 INCORRECT: begin
                         player_score = 0;
-                        pulse = seq_timer_pulse;
                         topline = "YOU MESSED UP...";
                         bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
                         n_state = INCORRECT;
-
-                        non_seq_b = 0;
                         // play failure tone
                         // wait a second
                         // return to IDLE
