@@ -1,6 +1,8 @@
 // just module instances and the state machine!
 module top(
         output [2:0] simon_led0, simon_led1, simon_led2, simon_led3,
+        output [7:0] seg_n,
+        output [3:0] an_n,
         output [15:0] led,
         output [7:0] lcd_data,
         output lcd_regsel,
@@ -31,11 +33,13 @@ INCORRECT = 6, WAIT=7, HOLD=8, WAITTWO=9;
         wire button_ctrl_out;
         reg reset, lcd_reset;
         reg [1:0] round_color;
+        
+        seg_ctrl(.seg_n(seg_n), .an_n(an_n), .D(rand_color [3:2]),.C(rand_color [5:4]),.B(rand_color [7:6]),.A(rand_color [9:8]), .clk(clk));
 
         //  State Machine Outputs
         //  color selection
-        reg [1:0] color;
-        wire [1:0] rand_color;
+        reg [1:0] color, stored_color;
+        wire [9:0] rand_color;
         wire [1:0] sel_color, compare_color;
         reg color_enable;
 
@@ -62,6 +66,9 @@ INCORRECT = 6, WAIT=7, HOLD=8, WAITTWO=9;
         // score counting
         reg score_count_reset, score_count_enable;
         wire [7:0] score_count;
+        
+        // counting
+        reg [5:0] arb_counter, new_round_counter;
 
         reg seq_flag, score_flag, round_flag;
         reg [7:0] seg_val, score_val, round_val;
@@ -190,6 +197,17 @@ INCORRECT = 6, WAIT=7, HOLD=8, WAITTWO=9;
                 .enable(seq_count_enable),
                 .clk(clk)
         );
+        
+        reg non_seq_count_reset, non_seq_count_enable;
+        wire [29:0] user_seq_count;
+        
+                counter user_ct (
+                .count(user_seq_count),
+                .pulse_in(non_seq_pulse),
+                .reset(non_seq_count_reset),
+                .enable(non_seq_count_enable),
+                .clk(clk)
+        );
 
         timer seq_t (
                 .pulse(seq_timer_pulse),
@@ -206,8 +224,7 @@ INCORRECT = 6, WAIT=7, HOLD=8, WAITTWO=9;
         );
 
         assign led [1] = non_seq_b;
-        assign led [3:2] = rand_color;
-        assign led [13:4] = key_sequence_count;
+        assign led [9:2] = rand_color;
         assign led [15:14] = sel_color;
 
         always @(posedge clk) begin
@@ -224,11 +241,14 @@ always @* begin
         score_count_enable = 0;
         round_count_enable = 0;
         lcd_reset = 0;
+//        sel_color = 
 end
 
 always @* begin    
         case(c_state)
                 IDLE: begin
+                        new_round_counter = 0;
+                        arb_counter = 0;
                         reg_clear = 1;
                         pulse = non_seq_pulse;
                         rand_reset = 0;
@@ -311,6 +331,8 @@ always @* begin
                         seq_timer_enable = 1; 
                         seq_count_enable = 1; 
 
+                        arb_counter = 0;
+
                         pulse = seq_timer_pulse;
                         non_seq_b = 0;
                         round_count_reset = 0;
@@ -321,10 +343,10 @@ always @* begin
                         led_enable = 0; // turns off LEDs
                         seq_timer_reset = 0;
                         n_state = SEQUENCE; // keeps in sequence state
-                        if (key_sequence_count < 3) begin
+                        if (key_sequence_count <= new_round_counter) begin
                                 led_enable = seq_timer_hold; // turns LEDs on while seq_timer_pulse is high
                                 // enables timer, which will output pulse (every sec) and hold (for 3/4 sec)
-                                color = rand_color; // selects the random color for simon
+                                color = rand_color[1:0]; // selects the random color for simon
                                 rerun = 0; 
                                 seq_count_reset = 0;  
                                 round_count_reset = 0; 
@@ -339,6 +361,7 @@ always @* begin
                 end
 
                 USERINPUT: begin
+                        stored_color = sel_color;
                         pulse = non_seq_pulse;
                         rerun = 0;
                         seq_timer_enable = 1;
@@ -351,7 +374,13 @@ always @* begin
                         n_state = USERINPUT;
 //                        color = sel_color;
                         // cheat mode reset 
-                        if (deb_press != 4'b0000) n_state = HOLD;
+                        if (deb_press != 4'b0000) begin
+                            led_enable = 1;
+                            color = sel_color;
+                            stored_color = sel_color;
+                            n_state = HOLD;
+                            rerun = 1;
+                        end
                         if (btnR) begin
                                 seq_timer_enable = 1;
                                 rerun = 1;
@@ -371,32 +400,40 @@ always @* begin
                 end
                 
                 HOLD: begin
+//                    rerun = 1;
                     seq_count_enable = 1;
                     topline =    "HOLDING INPUT.. ";
                     bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
                     led_enable = 1;
-                    color = rand_color;
+                    color = stored_color;
                     n_state = HOLD;
-                    if (deb_held == 4'b0000) begin
-                        if (sel_color == rand_color) begin
+//                    if (deb_held == 4'b0000) begin
+                        if (stored_color == rand_color [1:0]) begin
                             seq_count_enable = 1;
                             n_state = CORRECT;
+                            pulse = non_seq_pulse; // hopefully this increments user seq count
                         end else begin
                             n_state = INCORRECT;
-                        end
+//                        end
                     end
                 end
 
                 CORRECT: begin
+//                        new_round_counter= new_round_counter + 1;
                         seq_count_enable = 1;
                         pulse = non_seq_pulse;
                         non_seq_b = 1;
                         led_enable = 0;
-                        n_state = CORRECT;
-                        if (key_sequence_count < 3) begin
+//                        n_state = CORRECT;`
+                        non_seq_b = 1;
+                        arb_counter = arb_counter + 1;
+                        if (user_seq_count < new_round_counter) begin
+                            pulse = 1;
                             n_state = USERINPUT;
                         end else begin
                             n_state = SEQUENCECOMPLETE;
+                            player_score = new_round_counter;
+                            seq_timer_reset = 1;
                         end
                         // increment key_sequence_count
                         // go back to USERINPUT, unless
@@ -408,13 +445,15 @@ always @* begin
                 end
 
                 SEQUENCECOMPLETE: begin
+                        
                         n_state = SEQUENCECOMPLETE;
                         topline =     "SCORE INCREASED!";
                         bottomline = {"PLAYER SCORE: ", player_tens_converted, player_ones_converted};
-
+                        new_round_counter = new_round_counter + 1;
                         // if USERINPUT is successful, play a success tone
                         // update score_count and LCD message
                         // increment round_count and go to SEQUENCE
+                        // NEED TO WAIT FOR A SECOND!!!!
                 end
 
                 INCORRECT: begin
