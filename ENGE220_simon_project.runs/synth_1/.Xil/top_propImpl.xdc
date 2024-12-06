@@ -139,8 +139,6 @@ set_property src_info {type:XDC file:1 line:174 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN C16 [get_ports {lcd_data[3]}]
 set_property src_info {type:XDC file:1 line:193 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN L17 [get_ports {speaker}]
-set_property src_info {type:XDC file:1 line:194 export:INPUT save:INPUT read:READ} [current_design]
-set_property IOSTANDARD LVCMOS33 [get_ports {speaker}]
 set_property src_info {type:XDC file:1 line:199 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN P17 [get_ports {lcd_regsel}]
 set_property src_info {type:XDC file:1 line:202 export:INPUT save:INPUT read:READ} [current_design]

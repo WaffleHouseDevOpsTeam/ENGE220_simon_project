@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Dec  5 17:44:25 2024
-# Process ID: 11136
+# Start of session at: Fri Dec  6 00:33:12 2024
+# Process ID: 6560
 # Current directory: Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.vds
@@ -19,7 +19,7 @@
 # Host memory       :34050 MB
 # Swap memory       :5100 MB
 # Total Virtual     :39151 MB
-# Available Virtual :25237 MB
+# Available Virtual :23499 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/utils_1/imports/synth_1/top.dcp
@@ -35,36 +35,32 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3868
+INFO: [Synth 8-7075] Helper process launched with PID 5392
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1384.617 ; gain = 450.074
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 1383.684 ; gain = 449.121
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'ready', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_string.v:28]
-INFO: [Synth 8-11241] undeclared symbol 'seq_timer_pulse_deb', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:87]
-INFO: [Synth 8-11241] undeclared symbol 'speaker', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:158]
-WARNING: [Synth 8-11145] root scope declaration is not allowed in Verilog 95/2K mode [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/LCD_always.v:2]
-WARNING: [Synth 8-11145] root scope declaration is not allowed in Verilog 95/2K mode [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/LCD_always.v:3]
-CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'speakerselect' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/speakerselect.v:30]
-INFO: [Synth 8-9937] previous definition of design element 'speakerselect' is here [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/speakerselect.v:36]
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'lcd_ctrl' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v:72]
 INFO: [Synth 8-9937] previous definition of design element 'lcd_ctrl' is here [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_ctrl.v:72]
 INFO: [Synth 8-11241] undeclared symbol 'ready', assumed default net type 'wire' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v:28]
 CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'lcd_string' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v:162]
 INFO: [Synth 8-9937] previous definition of design element 'lcd_string' is here [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_string.v:162]
+CRITICAL WARNING: [Synth 8-9873] overwriting previous definition of module 'binary_to_BCD' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/lab11code/binary_to_BCD.v:25]
+INFO: [Synth 8-9937] previous definition of design element 'binary_to_BCD' is here [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/binary_to_BCD.v:25]
 INFO: [Synth 8-6157] synthesizing module 'top' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:2]
 INFO: [Synth 8-6157] synthesizing module 'lcd_string' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v:11]
 INFO: [Synth 8-6157] synthesizing module 'lcd_ctrl' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v:11]
 INFO: [Synth 8-6155] done synthesizing module 'lcd_ctrl' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v:11]
 INFO: [Synth 8-155] case statement is not full and has no default [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v:41]
 INFO: [Synth 8-6155] done synthesizing module 'lcd_string' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v:11]
-WARNING: [Synth 8-7071] port 'lcd_read' of module 'lcd_string' is unconnected for instance 'LCDstringer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:76]
-WARNING: [Synth 8-7071] port 'available' of module 'lcd_string' is unconnected for instance 'LCDstringer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:76]
-WARNING: [Synth 8-7023] instance 'LCDstringer' of module 'lcd_string' has 10 connections declared, but only 8 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:76]
+WARNING: [Synth 8-7071] port 'lcd_read' of module 'lcd_string' is unconnected for instance 'LCDstringer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:85]
+WARNING: [Synth 8-7071] port 'available' of module 'lcd_string' is unconnected for instance 'LCDstringer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:85]
+WARNING: [Synth 8-7023] instance 'LCDstringer' of module 'lcd_string' has 10 connections declared, but only 8 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:85]
 INFO: [Synth 8-6157] synthesizing module 'debouncer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'debouncer' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:1]
-WARNING: [Synth 8-7071] port 'held' of module 'debouncer' is unconnected for instance 'st_pulse' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:86]
-WARNING: [Synth 8-7071] port 'reset' of module 'debouncer' is unconnected for instance 'st_pulse' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:86]
-WARNING: [Synth 8-7023] instance 'st_pulse' of module 'debouncer' has 5 connections declared, but only 3 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:86]
+WARNING: [Synth 8-7071] port 'held' of module 'debouncer' is unconnected for instance 'st_pulse' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:95]
+WARNING: [Synth 8-7071] port 'reset' of module 'debouncer' is unconnected for instance 'st_pulse' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:95]
+WARNING: [Synth 8-7023] instance 'st_pulse' of module 'debouncer' has 5 connections declared, but only 3 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:95]
 INFO: [Synth 8-6157] synthesizing module 'button_ctrl' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'button_ctrl' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v:1]
 INFO: [Synth 8-6157] synthesizing module 'led_ctrl' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v:1]
@@ -78,39 +74,41 @@ INFO: [Synth 8-6155] done synthesizing module 'LFSR__parameterized0' (0#1) [Z:/D
 INFO: [Synth 8-6155] done synthesizing module 'PRNG' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/PRNG.v:1]
 INFO: [Synth 8-6157] synthesizing module 'scale_decoder' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/scale_decoder.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'scale_decoder' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/scale_decoder.v:1]
-INFO: [Synth 8-6157] synthesizing module 'speakerselect' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/speakerselect.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'speakerselect' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/speakerselect.v:1]
+INFO: [Synth 8-6157] synthesizing module 'speakerselect' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/speakerselect.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'speakerselect' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/speakerselect.v:1]
 INFO: [Synth 8-6157] synthesizing module 'counter' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'counter' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v:1]
-WARNING: [Synth 8-689] width (7) of port connection 'count' does not match port width (8) of module 'counter' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:164]
+WARNING: [Synth 8-689] width (7) of port connection 'count' does not match port width (8) of module 'counter' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:174]
 INFO: [Synth 8-6157] synthesizing module 'timer' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'timer' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'binary_to_BCD' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/lab11code/binary_to_BCD.v:1]
+INFO: [Synth 8-6157] synthesizing module 'add3' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/add3.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'add3' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/add3.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'binary_to_BCD' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/lab11code/binary_to_BCD.v:1]
+WARNING: [Synth 8-7071] port 'HUNDREDS' of module 'binary_to_BCD' is unconnected for instance 'converter' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:189]
+WARNING: [Synth 8-7023] instance 'converter' of module 'binary_to_BCD' has 4 connections declared, but only 3 given [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:189]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:2]
 WARNING: [Synth 8-7137] Register activate_d_reg in module lcd_ctrl has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v:26]
-WARNING: [Synth 8-3848] Net reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:31]
-WARNING: [Synth 8-3848] Net note_sel in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:67]
+WARNING: [Synth 8-3848] Net reset in module/entity top does not have driver. [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:32]
 WARNING: [Synth 8-3917] design top has port led[12] driven by constant 0
 WARNING: [Synth 8-3917] design top has port led[11] driven by constant 0
-WARNING: [Synth 8-7129] Port led[15] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[14] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port btnR in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[3] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[1] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[0] in module top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1499.238 ; gain = 564.695
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1499.242 ; gain = 564.680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1499.238 ; gain = 564.695
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1499.242 ; gain = 564.680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1499.238 ; gain = 564.695
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1499.242 ; gain = 564.680
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1499.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1499.242 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -206,55 +204,52 @@ Resolution: If [get_<value>] was used to populate the object, check to make sure
 WARNING: [Vivado 12-584] No ports matched 'btnD'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:119]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:119]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'speaker'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:193]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:193]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'speaker'. [Z:/Documents/ENGE220_simon_project/constraints.xdc:194]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [Z:/Documents/ENGE220_simon_project/constraints.xdc:194]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [Z:/Documents/ENGE220_simon_project/constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [Z:/Documents/ENGE220_simon_project/constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1598.887 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1559.039 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1598.887 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1559.039 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'speaker_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/speakerselect.v:15]
-WARNING: [Synth 8-327] inferring latch for variable 'n_state_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:229]
-WARNING: [Synth 8-327] inferring latch for variable 'color_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:138]
-WARNING: [Synth 8-327] inferring latch for variable 'led_enable_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:139]
-WARNING: [Synth 8-327] inferring latch for variable 'rerun_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:145]
-WARNING: [Synth 8-327] inferring latch for variable 'randomize_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:146]
-WARNING: [Synth 8-327] inferring latch for variable 'rand_reset_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:148]
-WARNING: [Synth 8-327] inferring latch for variable 'seq_count_reset_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:166]
-WARNING: [Synth 8-327] inferring latch for variable 'seq_timer_enable_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:167]
-WARNING: [Synth 8-327] inferring latch for variable 'seq_timer_reset_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:183]
-WARNING: [Synth 8-327] inferring latch for variable 'lcd_string_print_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:80]
-WARNING: [Synth 8-327] inferring latch for variable 'topline_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:81]
-WARNING: [Synth 8-327] inferring latch for variable 'bottomline_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:82]
+WARNING: [Synth 8-327] inferring latch for variable 'n_state_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:239]
+WARNING: [Synth 8-327] inferring latch for variable 'color_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:147]
+WARNING: [Synth 8-327] inferring latch for variable 'led_enable_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:148]
+WARNING: [Synth 8-327] inferring latch for variable 'pulse_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:153]
+WARNING: [Synth 8-327] inferring latch for variable 'rerun_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:154]
+WARNING: [Synth 8-327] inferring latch for variable 'randomize_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:155]
+WARNING: [Synth 8-327] inferring latch for variable 'rand_reset_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:157]
+WARNING: [Synth 8-327] inferring latch for variable 'seq_count_reset_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:176]
+WARNING: [Synth 8-327] inferring latch for variable 'seq_count_enable_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:177]
+WARNING: [Synth 8-327] inferring latch for variable 'seq_timer_reset_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:184]
+WARNING: [Synth 8-327] inferring latch for variable 'seq_timer_enable_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:185]
+WARNING: [Synth 8-327] inferring latch for variable 'lcd_string_print_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:89]
+WARNING: [Synth 8-327] inferring latch for variable 'topline_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:90]
+WARNING: [Synth 8-327] inferring latch for variable 'bottomline_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:91]
+WARNING: [Synth 8-327] inferring latch for variable 'non_seq_b_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:97]
+WARNING: [Synth 8-327] inferring latch for variable 'player_score_reg' [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v:190]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -263,7 +258,7 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   22 Bit       Adders := 5     
 	   2 Input   18 Bit       Adders := 2     
-	   2 Input    8 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 3     
 +---XORs : 
 	   4 Input      1 Bit         XORs := 2     
 +---Registers : 
@@ -279,25 +274,26 @@ Detailed RTL Component Info :
 	   2 Input  128 Bit        Muxes := 4     
 	  15 Input  128 Bit        Muxes := 2     
 	   8 Input  128 Bit        Muxes := 2     
-	   2 Input  127 Bit        Muxes := 3     
+	   2 Input  127 Bit        Muxes := 1     
 	   2 Input   18 Bit        Muxes := 2     
-	   8 Input   18 Bit        Muxes := 1     
+	   4 Input   18 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 4     
 	  15 Input    8 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 2     
-	   2 Input    3 Bit        Muxes := 3     
-	   4 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 4     
+	   4 Input    3 Bit        Muxes := 2     
 	   5 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 6     
+	   2 Input    2 Bit        Muxes := 5     
 	   4 Input    2 Bit        Muxes := 2     
 	   8 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 29    
+	   2 Input    1 Bit        Muxes := 34    
 	  15 Input    1 Bit        Muxes := 7     
 	   5 Input    1 Bit        Muxes := 1     
 	   4 Input    1 Bit        Muxes := 1     
-	   8 Input    1 Bit        Muxes := 17    
+	   8 Input    1 Bit        Muxes := 24    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -316,38 +312,151 @@ Start Cross Boundary and Area Optimization
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-3917] design top has port led[12] driven by constant 0
 WARNING: [Synth 8-3917] design top has port led[11] driven by constant 0
-WARNING: [Synth 8-7129] Port led[15] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led[14] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port btnR in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[3] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[2] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[1] in module top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw[0] in module top is either unconnected or has no load
-WARNING: [Synth 8-3332] Sequential element (simon_spk/speaker_reg) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (n_state_reg[3]) is unused and will be removed from module top.
 WARNING: [Synth 8-3332] Sequential element (lcd_string_print_reg) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (topline_reg[127]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (topline_reg[126]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (bottomline_reg[127]) is unused and will be removed from module top.
-WARNING: [Synth 8-3332] Sequential element (bottomline_reg[126]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[124]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[123]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[122]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[121]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[120]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[116]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[114]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[113]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[112]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[108]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[107]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[105]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[104]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[102]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[101]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[100]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[98]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[97]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[96]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[92]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[91]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[90]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[89]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[88]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[86]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[85]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[83]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[82]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[75]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[74]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[73]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[72]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[70]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[69]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[68]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[67]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[66]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[65]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[64]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[62]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[60]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[59]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[58]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[57]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[56]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[51]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[49]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[48]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[46]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[45]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[43]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[41]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[40]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[37]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[36]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[35]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[34]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[32]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[30]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[29]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[28]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[27]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[26]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[25]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[24]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[22]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[21]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[18]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[17]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[16]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[13]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[12]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[11]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[9]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[8]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[6]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[5]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[3]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[2]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[1]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (topline_reg[0]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[122]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[121]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[115]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[114]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[110]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[107]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[27]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[11]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[10]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[9]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[8]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[6]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[5]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[3]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[2]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[1]) is unused and will be removed from module top.
+WARNING: [Synth 8-3332] Sequential element (bottomline_reg[0]) is unused and will be removed from module top.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[21] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[21]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[20] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[20]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[19] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[19]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[18] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[18]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[17] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[17]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[16] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[16]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[15] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[15]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[14] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[14]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[13] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[13]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[12] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[12]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[11] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[11]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[10] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[10]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[9] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[9]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[8] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[8]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[7] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[7]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[6] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[6]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[5] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[5]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[4] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[4]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[3] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[3]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[2] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[2]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[1] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[1]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Synth 8-5966] Removing register instance (\st_pulse/timer_reg[0] ) from module (top) as it has self-loop and (\st_pulse/timer_reg[0]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
 INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[21] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[21]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
 INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[20] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[20]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
 INFO: [Synth 8-5966] Removing register instance (\deb_s0/timer_reg[19] ) from module (top) as it has self-loop and (\deb_s0/timer_reg[19]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
@@ -426,18 +535,9 @@ INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[13] ) from mo
 INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[12] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[12]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
 INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[11] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[11]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
 INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[10] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[10]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[9] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[9]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[8] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[8]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[7] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[7]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[6] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[6]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[5] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[5]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[4] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[4]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[3] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[3]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[2] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[2]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[1] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[1]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
-INFO: [Synth 8-5966] Removing register instance (\deb_s3/timer_reg[0] ) from module (top) as it has self-loop and (\deb_s3/timer_reg[0]__0 ) is actual driver [Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v:24]
+INFO: [Common 17-14] Message 'Synth 8-5966' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:20 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -455,37 +555,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -501,45 +601,44 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     3|
-|2     |CARRY4 |    41|
-|3     |LUT1   |    98|
-|4     |LUT2   |    83|
-|5     |LUT3   |   264|
-|6     |LUT4   |    79|
-|7     |LUT5   |    37|
-|8     |LUT6   |    38|
-|9     |FDRE   |   423|
-|10    |FDSE   |    66|
-|11    |LD     |   120|
-|12    |IBUF   |     6|
-|13    |OBUF   |    36|
-|14    |OBUFT  |     2|
+|1     |BUFG   |     1|
+|2     |CARRY4 |    56|
+|3     |LUT1   |   119|
+|4     |LUT2   |    89|
+|5     |LUT3   |    69|
+|6     |LUT4   |   132|
+|7     |LUT5   |   178|
+|8     |LUT6   |    95|
+|9     |FDRE   |   463|
+|10    |FDSE   |    78|
+|11    |LD     |    23|
+|12    |IBUF   |     7|
+|13    |OBUF   |    39|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 30 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1598.887 ; gain = 564.695
-Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 1598.887 ; gain = 664.344
+Synthesis finished with 0 errors, 0 critical warnings and 125 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 1559.039 ; gain = 564.680
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1559.039 ; gain = 624.477
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1598.887 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 161 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1559.039 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 79 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1598.887 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1559.039 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 120 instances were transformed.
-  LD => LDCE: 120 instances
+  A total of 23 instances were transformed.
+  LD => LDCE: 23 instances
 
-Synth Design complete | Checksum: 1ed48037
+Synth Design complete | Checksum: 60185aa6
 INFO: [Common 17-83] Releasing license: Synthesis
-144 Infos, 83 Warnings, 35 Critical Warnings and 0 Errors encountered.
+160 Infos, 170 Warnings, 33 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:24 . Memory (MB): peak = 1598.887 ; gain = 1065.281
+synth_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:27 . Memory (MB): peak = 1559.039 ; gain = 1023.809
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1598.887 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1559.039 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec  5 17:44:57 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  6 00:33:47 2024...

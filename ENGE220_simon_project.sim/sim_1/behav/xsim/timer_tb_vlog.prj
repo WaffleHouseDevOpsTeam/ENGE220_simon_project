@@ -12,7 +12,6 @@ verilog xil_defaultlib  \
 "../../../../ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v" \
 "../../../../ENGE220_simon_project.srcs/sources_1/new/counter.v" \
 "../../../../ENGE220_simon_project.srcs/sources_1/new/not_top.v" \
-"../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/LCD_always.v" \
 "../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/speakerselect.v" \
 "../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/seg_ctrl.v" \
 "../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/pulsewidth_ctrl.v" \
@@ -22,14 +21,15 @@ verilog xil_defaultlib  \
 "../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/add3.v" \
 "../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v" \
 "../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v" \
-"../../../../ENGE220_simon_project.srcs/sources_1/new/PRNG.v" \
-"../../../../ENGE220_simon_project.srcs/sources_1/new/LFSR.v" \
-"../../../../ENGE220_simon_project.srcs/sources_1/new/LFSR_tb.v" \
+"../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/PRNG.v" \
+"../../../../ENGE220_simon_project.srcs/sources_1/imports/Downloads/LFSR.v" \
+"../../../../ENGE220_simon_project.srcs/sources_1/new/top_test.v" \
 "../../../../ENGE220_simon_project.srcs/sim_1/new/button_ctrl_tb.v" \
 "../../../../ENGE220_simon_project.srcs/sim_1/new/debounce_tb.v" \
 "../../../../ENGE220_simon_project.srcs/sim_1/new/counter_tb.v" \
 "../../../../ENGE220_simon_project.srcs/sim_1/new/led_ctrl_tb.v" \
 "../../../../ENGE220_simon_project.srcs/sim_1/new/top_tb.v" \
+"../../../../ENGE220_simon_project.srcs/sim_1/new/timer_tb.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

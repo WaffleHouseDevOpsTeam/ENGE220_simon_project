@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Thu Dec  5 17:45:38 2024
+| Date             : Fri Dec  6 00:34:32 2024
 | Host             : WM106-ST08_01 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+--------------+
-| Total On-Chip Power (W)  | 11.033       |
-| Design Power Budget (W)  | Unspecified* |
-| Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 10.876       |
-| Device Static (W)        | 0.157        |
-| Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 29.8         |
-| Junction Temperature (C) | 80.2         |
-| Confidence Level         | Low          |
-| Setting File             | ---          |
-| Simulation Activity File | ---          |
-| Design Nets Matched      | NA           |
-+--------------------------+--------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 12.110 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 11.932                           |
+| Device Static (W)        | 0.178                            |
+| Effective TJA (C/W)      | 5.0                              |
+| Max Ambient (C)          | 24.5                             |
+| Junction Temperature (C) | 85.5                             |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.854 |     1271 |       --- |             --- |
-|   LUT as Logic |     1.478 |      392 |     20800 |            1.88 |
-|   CARRY4       |     0.221 |       41 |      8150 |            0.50 |
-|   Register     |     0.149 |      609 |     41600 |            1.46 |
-|   BUFG         |     0.006 |        3 |        32 |            9.38 |
-|   Others       |     0.000 |       23 |       --- |             --- |
-| Signals        |     1.244 |      843 |       --- |             --- |
-| I/O            |     7.778 |       44 |       106 |           41.51 |
-| Static Power   |     0.157 |          |           |                 |
-| Total          |    11.033 |          |           |                 |
+| Slice Logic    |     2.622 |     1326 |       --- |             --- |
+|   LUT as Logic |     2.111 |      536 |     20800 |            2.58 |
+|   CARRY4       |     0.308 |       56 |      8150 |            0.69 |
+|   Register     |     0.197 |      565 |     41600 |            1.36 |
+|   BUFG         |     0.006 |        1 |        32 |            3.13 |
+|   Others       |     0.000 |       27 |       --- |             --- |
+| Signals        |     1.685 |      834 |       --- |             --- |
+| I/O            |     7.625 |       46 |       106 |           43.40 |
+| Static Power   |     0.178 |          |           |                 |
+| Total          |    12.110 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     3.201 |       3.122 |      0.079 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.305 |       0.284 |      0.020 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     2.196 |       2.195 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     4.431 |       4.335 |      0.096 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.301 |       0.278 |      0.023 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     2.151 |       2.150 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -138,20 +138,22 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| top                |    10.876 |
-|   LCDstringer      |     0.942 |
-|     lcd1           |     0.354 |
-|   deb_s0           |     0.387 |
-|   deb_s1           |     0.380 |
-|   deb_s2           |     0.383 |
-|   deb_s3           |     0.386 |
-|   seq_ct           |     0.002 |
-|   seq_t            |     0.032 |
-|   simon_button_loc |     0.009 |
-|   simon_color_ctrl |     0.143 |
-|   simon_rand       |     0.350 |
-|     u1             |     0.174 |
-|     u2             |     0.176 |
+| top                |    11.932 |
+|   LCDstringer      |     1.050 |
+|     lcd1           |     0.390 |
+|   deb_s0           |     0.405 |
+|   deb_s1           |     0.399 |
+|   deb_s2           |     0.387 |
+|   deb_s3           |     0.392 |
+|   seq_ct           |     0.003 |
+|   seq_t            |     0.031 |
+|   simon_button_loc |     0.014 |
+|   simon_color_ctrl |     0.157 |
+|   simon_rand       |     0.358 |
+|     u1             |     0.185 |
+|     u2             |     0.173 |
+|   simon_spk        |     0.629 |
+|   st_pulse         |     0.390 |
 +--------------------+-----------+
 
 
