@@ -168,14 +168,6 @@ module top(
             .clk(clk)
         );
         
-        counter round_ct (
-            .count(key_sequence_count),
-            .pulse_in(round_timer_pulse),
-            .reset(round_count_reset),
-            .enable(round_count_enable),
-            .clk(clk)
-        );
-        
         timer seq_t (
             .pulse(seq_timer_pulse),
             .hold(seq_timer_hold),
@@ -223,7 +215,7 @@ module top(
                                 round_count_reset = 1;
                                 if (deb_held[0]) begin
                                         rand_reset = 1; // when button input, move to randomize
-                                        led_enable = 1;
+                                        led_enable = 1; // LEDs can turn on. for some reason all of them do?
                                         
                                         n_state = RANDOMIZE;
                                 end else begin  
@@ -247,7 +239,7 @@ module top(
                                         topline = "RANDOMIZING DONE";
                                         bottomline = "RANDOMIZING DONE";
                                         n_state = SEQUENCE;
-                                        seq_timer_enable = 1;
+//                                        seq_timer_enable = 1; 
                                         seq_timer_reset = 1;
                                         seq_count_reset = 1;
                                 end
@@ -259,25 +251,32 @@ module top(
 
                         SEQUENCE: begin
                                 round_count_reset = 0;
-                                randomize = 0;
+                                randomize = 0; // turns off randomization
                                 topline = "this is sequence";
                                 bottomline = "please no breaky";
-                                seq_count_reset = 0;
-                                led_enable = 0;
+                                seq_count_reset = 0; 
+                                led_enable = 0; // turns off LEDs
                                 seq_timer_reset = 0;
-                                seq_timer_enable = 1;
+                                seq_timer_enable = 1; 
+                                seq_count_enable = 1; 
                                 if (key_sequence_count <= 5) begin
+                                        topline =    "count           ";
+                                        bottomline = "please no breaky";
                                         led_enable = seq_timer_hold; // turns LEDs on while seq_timer_pulse is high
-                                        seq_count_enable = 1; // enables sequence counter, will count if pulse is high
-                                        seq_timer_enable = 1; // enables timer, outputs pulse (every sec) and hold (for 3/4 sec)
+                                         // enables timer, which will output pulse (every sec) and hold (for 3/4 sec)
                                         n_state = SEQUENCE; // keeps in sequence state
-                                        color = rand_color; // selects a random color for simon
+                                        color = rand_color; // selects the random color for simon
                                         rerun = 0; // doesn't rerun randomization
                                         seq_count_reset = 0;  
                                         round_count_reset = 0; 
                                        // waits
                                        // do again?
+                                       // KEY_SEQ_COUNT IS NOT INCREMENTING,  COLOR IS JUST AN INFINITE? RANDOM SEQUENCE
                                 end else begin
+                                        seq_count_enable = 0; // enables sequence counter, will increment count if pulse is high
+                                        seq_timer_enable = 0;
+                                        topline = "sequence maxxing";
+                                        bottomline = "sequence maxxing";
                                         rerun = 1;
                                         round_count_reset = 1;
                                         seq_count_reset = 1;

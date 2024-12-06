@@ -7,6 +7,7 @@ module counter(
 	);
 
 	always @(posedge clk) begin
+	        count <= count;
             if (pulse_in && enable) begin
                 count <= count + 1;
             end
