@@ -105,14 +105,14 @@ always @* begin
     usr_count_en = 1;
 
     // misc
-    lcd_msg = "default        ";
+    lcd_msg = "default         ";
     wait_time = 0;
     select_loc = 1;
 
     case (c_state)
         IDLE:  begin
             n_state = IDLE;
-            lcd_msg = "Green to play  ";
+            lcd_msg = "Green to play   ";
 
             rnd_count_rt = 1;
             seq_count_rt = 1;
@@ -190,6 +190,7 @@ always @* begin
         end
         HOLD: begin 
             n_state = HOLD;
+            lcd_msg = "HOLDING         ";
             led_speaker_en = 1;
             if (btn_released) n_state = CHECK;
         end
@@ -215,6 +216,7 @@ always @* begin
         end
         CHECK_COMP: begin
             n_state = USR_IN;
+            lcd_msg = "CHECKING        ";
             if (usr_count_int == seq_count_int) begin
                 n_state = USR_SCORE;
             end
@@ -225,7 +227,7 @@ always @* begin
             jingle_rt = 0;
             win = 1;
             sound_sel = 0;
-            wait_time = 8;
+            wait_time = 2;
             if (wait_timer_pulse) n_state = IDLE;
         end
         USR_SCORE: begin
@@ -241,7 +243,7 @@ always @* begin
             seq_count_rt = 1;
             usr_count_rt = 1;
             seq_rand_rr = 1;
-            wait_time = 8;
+            wait_time = 2;
             
             if (wait_timer_pulse) n_state = WAIT_SEQ;
         end

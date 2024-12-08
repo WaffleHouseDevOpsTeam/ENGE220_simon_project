@@ -102,6 +102,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/state_machine.v
   C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/sequencer.v
   C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/jingle_timer.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/test_top.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -3,10 +3,10 @@ module jingle_timer (
     input clk, reset, enable, win
     );
 
-localparam ONESEC = 100_000_000, QUARTERSEC = 25_000_000, TRIPLESEC = 75_000_000;
+localparam HALFSEC = 50_000_000, QUARTERSEC = 25_000_000, EIGHTSEC=12_500_000;
 reg [29:0] counter;
 wire [15:0] lose_sequence = 16'b0100011011100100; // buddy holly riff
-wire [15:0] win_sequence = 16'b0100011011100100;
+wire [15:0] win_sequence =  16'b0100011010100100;
 wire [15:0] sequence;
 reg [15:0] count_seq;
 reg pulse; 
@@ -21,24 +21,24 @@ always @(posedge clk) begin
         end
 	end
 end
-assign note = count_seq [1:0];
+assign note = count_seq [15:14];
 // pulse
 always @* begin
     pulse = 0;
-	if (counter == QUARTERSEC) begin
+	if (counter == 0) begin
 		pulse = 1;
     end
 
 end	
-always @* begin
+always @(posedge clk) begin
     count_seq = count_seq;
     if (reset) count_seq = sequence;
-    if (pulse) count_seq = count_seq >> 2; 
+    if (pulse) count_seq = count_seq << 2; 
 end
 
 always @* begin
     hold = 0;
-    if ((counter == QUARTERSEC) || counter == (QUARTERSEC)) begin
+    if ((counter <= EIGHTSEC)) begin
         hold = 1;
 
     end
