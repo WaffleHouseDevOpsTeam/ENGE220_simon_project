@@ -1,7 +1,7 @@
 -------------------------------------
 | Tool Version : Vivado v.2024.1
-| Date         : Fri Dec  6 10:28:56 2024
-| Host         : WM106-ST08_01
+| Date         : Sun Dec  8 06:39:47 2024
+| Host         : ZephyrusG14-DB
 | Design       : design_1
 | Device       : xc7a35t-cpg236-1--
 -------------------------------------

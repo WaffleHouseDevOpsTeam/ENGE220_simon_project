@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.tcl"
+  variable script "C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,48 +56,52 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 6
+set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.cache/wt [current_project]
-set_property parent.project_path Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.cache/wt [current_project]
+set_property parent.project_path C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo z:/Documents/ENGE220_simon_project/ENGE220_simon_project.cache/ip [current_project]
+set_property ip_output_repo c:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_ctrl.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/binary_to_BCD.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_string.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/scale_decoder.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/speakerselect.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/not_top.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/seg_ctrl.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/pulsewidth_ctrl.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/hex_seven_seg_decoder.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/unsigned_to_ASCII.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/seven_seg.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/add3.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/PRNG.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/LFSR.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/top_test.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/lab11code/binary_to_BCD.v
-  Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/shift_reg.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_ctrl.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/binary_to_BCD.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/lcd_string.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/scale_decoder.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/debounce.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/speakerselect.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/top.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/led_ctrl.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/button_ctrl.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/modules/timer.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/counter.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/not_top.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/seg_ctrl.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/pulsewidth_ctrl.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/hex_seven_seg_decoder.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/unsigned_to_ASCII.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/seven_seg.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/add3.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_ctrl.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/lcd_string.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/PRNG.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/Downloads/LFSR.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/top_test.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/lab11code/binary_to_BCD.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/shift_reg.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/imports/ENGE220_simon_project/state_machine.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/sequencer.v
+  C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/sources_1/new/jingle_timer.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -108,12 +112,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc Z:/Documents/ENGE220_simon_project/constraints.xdc
-set_property used_in_implementation false [get_files Z:/Documents/ENGE220_simon_project/constraints.xdc]
+read_xdc C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/danie/Documents/lab_9/ENGE220_simon_project/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental Z:/Documents/ENGE220_simon_project/ENGE220_simon_project.srcs/utils_1/imports/synth_1/top.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/danie/Documents/lab_9/ENGE220_simon_project/ENGE220_simon_project.srcs/utils_1/imports/synth_1/top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

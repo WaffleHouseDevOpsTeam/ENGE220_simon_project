@@ -7,10 +7,10 @@ module scale_decoder(
 	always @* begin
 		if (enable) begin
 			case (sel)
-				2'b00: note <= 227272;
-				2'b01: note <= 202478;
-				2'b10: note <= 180384;
-				2'b11: note <= 170262;
+				2'b00: note <= 303951;
+				2'b01: note <= 240963;
+				2'b10: note <= 214592;
+				2'b11: note <= 191204;
 				
 //				3'b100: note <= 151686;
 //				3'b101: note <= 135136;

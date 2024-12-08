@@ -6,6 +6,6 @@ module counter (output reg counter_count, input reset, input pulse);
             counter_count = counter_count + 1
         end
     end
-    if (reset) counter_count = 0;
+    if (reset) counter_count = 1;
 
 endmodule

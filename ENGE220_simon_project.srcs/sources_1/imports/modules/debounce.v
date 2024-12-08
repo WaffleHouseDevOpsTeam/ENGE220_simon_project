@@ -1,5 +1,5 @@
 module debouncer(
-	output pressed, held,
+	output pressed, held, released,
 	input button, clk, reset
 	);
 
@@ -32,5 +32,6 @@ module debouncer(
 	end	
 	
 	assign held = bt_deb;
-	assign pressed = bt_deb & ~bt_deb_d; // falling edge detection
+	assign pressed = bt_deb & ~bt_deb_d; 
+	assign released = ~bt_deb & bt_deb_d;// falling edge detection
 endmodule

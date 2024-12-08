@@ -5,6 +5,7 @@ reg [25:0] counter;
 
 always @* begin
     if (enable) begin
+        pulse = 0;
         if (counter == 0) pulse = 1;
         if (reset) pulse = 0;
     end

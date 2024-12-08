@@ -193,8 +193,8 @@ set_property PACKAGE_PIN C16 [get_ports {lcd_data[3]}]
 set_property PACKAGE_PIN L17 [get_ports {speaker}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {speaker}]
 ###Sch name = JC8
-##set_property PACKAGE_PIN M19 [get_ports {servo}]
-##	set_property IOSTANDARD LVCMOS33 [get_ports {servo}]
+set_property PACKAGE_PIN M19 [get_ports {servo}]
+	set_property IOSTANDARD LVCMOS33 [get_ports {servo}]
 ###Sch name = JC9
 set_property PACKAGE_PIN P17 [get_ports {lcd_regsel}]
 	set_property IOSTANDARD LVCMOS33 [get_ports {lcd_regsel}]

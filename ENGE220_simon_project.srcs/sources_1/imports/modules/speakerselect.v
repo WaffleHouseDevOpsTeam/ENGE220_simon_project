@@ -1,13 +1,13 @@
 module speakerselect(
 	output reg speaker, 
-	input  [17:0] note,
+	input  [24:0] note,
 	input enable, 
 	input  clk 
 );
 
 
-	reg [17:0] count_val;
-	reg [17:0] counter;
+	reg [24:0] count_val;
+	reg [24:0] counter;
 
 	always @* begin
 		count_val = note;

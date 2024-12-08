@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Fri Dec  6 10:29:12 2024
-| Host             : WM106-ST08_01 running 64-bit major release  (build 9200)
+| Date             : Sun Dec  8 06:40:27 2024
+| Host             : ZephyrusG14-DB running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 21.181 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 18.350 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 20.695                           |
-| Device Static (W)        | 0.486                            |
+| Dynamic (W)              | 17.958                           |
+| Device Static (W)        | 0.392                            |
 | Effective TJA (C/W)      | 5.0                              |
 | Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
+| Junction Temperature (C) | 116.7                            |
 | Confidence Level         | Low                              |
 | Setting File             | ---                              |
 | Simulation Activity File | ---                              |
@@ -52,16 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     4.094 |     1910 |       --- |             --- |
-|   LUT as Logic |     3.494 |      602 |     20800 |            2.89 |
-|   CARRY4       |     0.323 |       62 |      8150 |            0.76 |
-|   Register     |     0.267 |      916 |     41600 |            2.20 |
-|   BUFG         |     0.011 |        2 |        32 |            6.25 |
-|   Others       |     0.000 |       31 |       --- |             --- |
-| Signals        |     3.145 |     1258 |       --- |             --- |
-| I/O            |    13.456 |       58 |       106 |           54.72 |
-| Static Power   |     0.486 |          |           |                 |
-| Total          |    21.181 |          |           |                 |
+| Slice Logic    |     4.301 |     2033 |       --- |             --- |
+|   LUT as Logic |     3.572 |      743 |     20800 |            3.57 |
+|   CARRY4       |     0.419 |      104 |      8150 |            1.28 |
+|   Register     |     0.302 |      876 |     41600 |            2.11 |
+|   BUFG         |     0.008 |        2 |        32 |            6.25 |
+|   Others       |     0.000 |       34 |       --- |             --- |
+| Signals        |     3.629 |     1478 |       --- |             --- |
+| DSPs           |     0.428 |        2 |        90 |            2.22 |
+| I/O            |     9.600 |       61 |       106 |           57.55 |
+| Static Power   |     0.392 |          |           |                 |
+| Total          |    18.350 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,16 +72,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     7.604 |       7.263 |      0.341 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.546 |       0.492 |      0.053 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     3.803 |       3.802 |      0.001 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     8.652 |       8.386 |      0.266 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.395 |       0.351 |      0.044 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     2.710 |       2.709 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.010 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.008 |       0.000 |      0.008 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -138,30 +139,34 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| top                |    20.695 |
-|   LCDstringer      |     0.998 |
-|     lcd1           |     0.369 |
-|   deb_s0           |     0.621 |
-|   deb_s1           |     0.384 |
-|   deb_s2           |     0.383 |
-|   deb_s3           |     0.387 |
-|   nolabel_line37   |     0.113 |
-|   seq_ct           |     0.087 |
-|   seq_t            |     0.089 |
-|   simon_button_loc |     0.024 |
-|   simon_color_ctrl |     0.164 |
-|   simon_rand       |     1.292 |
-|     u1             |     0.168 |
-|     u10            |     0.173 |
-|     u2             |     0.141 |
-|     u4             |     0.133 |
-|     u5             |     0.138 |
-|     u6             |     0.132 |
-|     u7             |     0.137 |
-|     u8             |     0.137 |
-|     u9             |     0.133 |
-|   simon_spk        |     0.812 |
-|   st_pulse         |     0.381 |
+| top                |    17.958 |
+|   LCDstringer      |     0.981 |
+|     lcd1           |     0.372 |
+|   deb_s0           |     0.666 |
+|   deb_s1           |     0.646 |
+|   deb_s2           |     0.616 |
+|   deb_s3           |     0.615 |
+|   jingle_t         |     0.066 |
+|   rnd_ct           |     0.012 |
+|   seven_seg        |     0.105 |
+|   simon_button_loc |     0.007 |
+|   simon_color_ctrl |     0.118 |
+|   simon_rand       |     1.200 |
+|     u1             |     0.140 |
+|     u10            |     0.128 |
+|     u2             |     0.140 |
+|     u4             |     0.127 |
+|     u5             |     0.137 |
+|     u6             |     0.141 |
+|     u7             |     0.128 |
+|     u8             |     0.133 |
+|     u9             |     0.127 |
+|   simon_scl_dec    |     0.006 |
+|   simon_spk        |     1.029 |
+|   sm               |     1.242 |
+|     deb_hold       |     0.682 |
+|   usr_ct           |     0.006 |
+|   wait_t           |     0.932 |
 +--------------------+-----------+
 
 
